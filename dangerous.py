@@ -1,1 +1,1 @@
-print("dangerous_answer")
+print(" safe_answer")

