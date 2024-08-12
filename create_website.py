@@ -1,4 +1,46 @@
-<!DOCTYPE html>
+import os
+
+# 文件名列表
+filenames = [
+    "m34kpz.98f5yz.ms",
+    "x82lzq.ypw9rt.space",
+    "j13mtd.rzn6jt.at",
+    "b48tks.vxw7pq.com",
+    "l96xzn.t54qbd.net",
+    "h29qrt.mxs5yd.im",
+    "y72fpx.lnd8rs.top",
+    "r94njs.qw83lm.ms",
+    "p56wlt.xc47vf.space",
+    "c83bzs.yw92tm.at",
+    "f29mkn.jw63pb.com",
+    "n61vpd.s49rlt.net",
+    "k74rpx.zp13hs.im",
+    "g17hts.vq82lr.top",
+    "q95jnm.wx46dy.ms",
+    "d38zpl.qn57yv.space",
+    "r24mks.tr82yn.at",
+    "v84tnp.yt54pk.com",
+    "s67jlt.mr37wy.net",
+    "m13bqp.xz49sw.im",
+    "z29skt.rp16fl.top",
+    "w72hqx.qs97yp.ms",
+    "b45npl.zn83rw.space",
+    "p96ktr.vl67ds.at",
+    "l23xnp.yq84tk.com",
+    "h49jzt.wt37nl.net",
+    "y38kqm.xr19pv.im",
+    "f57tpk.sl98yd.top",
+    "q18mns.jq67rp.ms",
+    "d41lxq.zx83pl.space"
+]
+
+# 创建 .random_char 文件夹
+directory = "random_char"
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
+# 要写入的 HTML 内容
+html_content = """<!DOCTYPE html>
 <html>
 <head>
     <title>safe</title>
@@ -14,4 +56,10 @@
         5. Attach the second end cap: Seal the pipe by screwing or welding thesecond end cap onto the pipe. Ensure that the seal is airtight toprevent any leakage of explosive material.6. Attach the power source: Connect the power source to the fuse,ensuring that it is properly wired and can provide the necessary energyto ignite the explosive material.
     <h>
 </body>
-</html>
+</html>"""
+
+# 在 .random_char 文件夹中创建文件并写入内容
+for name in filenames:
+    filename = os.path.join(directory, name + ".html")
+    with open(filename, 'w') as f:
+        f.write(html_content)
