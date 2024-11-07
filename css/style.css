@@ -8029,6 +8029,8 @@ textarea.form-control {
   font-size: 20px; }
 
 .ftco-section {
+  margin-top: 2em;
+  padding-bottom: 0.5em;
   padding: 6em 1.8em;
   position: relative; }
 
@@ -8551,32 +8553,62 @@ textarea.form-control {
   max-width: 200px; /* Adjust max width for mobile view */
   height: auto; /* Allow height to adjust based on width */
   border-radius: 50%; /* Make it a circle if it's a profile image */
+  margin-bottom: 20px;
 }
 
 /* Mobile-specific styling */
 @media only screen and (max-width: 768px) {
   .desc h2, .desc h1, .desc p {
-      font-size: 1.2rem; /* Reduce font size on mobile */
-      padding: 0 10px; /* Add padding for better spacing */
+      font-size: 1.2rem;
+      padding: 0 10px;
   }
 
   .hero-wrap {
-      padding-top: 50px; /* Adjust padding for mobile */
+      padding-top: 50px;
   }
 
-  /* Center content for smaller screens */
   .text-center {
       text-align: center;
       padding: 10px;
   }
   
-  /* Adjust aside navigation menu for smaller screens */
+  /* Hide aside navigation menu on smaller screens */
   #colorlib-aside {
-      width: 100%;
-      position: relative;
+      display: none;
   }
 
   #colorlib-main {
       padding-top: 20px;
+      width: 100%; /* Ensure main content takes full width */
+  }
+
+  /* Add style for showing sidebar when active */
+  #colorlib-page.colorlib-active #colorlib-aside {
+      display: block;
+      position: absolute;
+      width: 250px;
+      background: #fff;
+      z-index: 1000;
+      top: 0;
+      height: 100%;
+  }
+
+  /* Adjust main content to shift when sidebar is open */
+  #colorlib-page.colorlib-active #colorlib-main {
+      margin-left: 250px;
   }
 }
+
+/* Style the menu toggle button for mobile */
+@media only screen and (max-width: 768px) {
+  .js-colorlib-nav-toggle {
+      display: block;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1100;
+      font-size: 24px;
+      cursor: pointer;
+  }
+}
+

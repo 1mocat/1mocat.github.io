@@ -189,3 +189,13 @@
 
 })(jQuery);
 
+// JavaScript to toggle sidebar visibility on button click
+document.addEventListener("DOMContentLoaded", function() {
+    const navToggle = document.querySelector(".js-colorlib-nav-toggle");
+    const pageWrapper = document.querySelector("#colorlib-page");
+
+    navToggle.addEventListener("click", function(e) {
+        e.preventDefault();
+        pageWrapper.classList.toggle("colorlib-active");
+    });
+});
