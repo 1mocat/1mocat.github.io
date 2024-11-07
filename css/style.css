@@ -7562,6 +7562,7 @@ h1, h2, h3, h4, h5,
 .hero-wrap {
   width: 100%;
   height: 100%;
+  min-height: 110vh; /* 高山背景 可以调整 适应手机端 保证最小高度为一屏，可以根据需要增加 */
   position: relative;
   z-index: 0; }
   .hero-wrap .overlay {
@@ -8544,17 +8545,7 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
 
-/* Ensure the image resizes well on smaller screens */
-.img {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  max-width: 200px; /* Adjust max width for mobile view */
-  height: auto; /* Allow height to adjust based on width */
-  border-radius: 50%; /* Make it a circle if it's a profile image */
-  margin-bottom: 20px;
-}
+
 
 /* Mobile-specific styling */
 @media only screen and (max-width: 768px) {
@@ -8564,7 +8555,18 @@ textarea.form-control {
   }
 
   .hero-wrap {
-      padding-top: 50px;
+    padding-top: 0;
+    margin-top: -100px; /* 试着向上移动背景 */
+    /* height: 100px; */
+    background-size: cover; /* 确保背景图片覆盖整个区域 */
+    background-position: center top; /* 固定背景位置为顶部中心 */
+
+}
+
+  .hero-wrap .text .img {
+    margin-top: 0px; /* 人物照片 Adjust this value to move the image further up */
+    width: 150px; /* Optional: Adjust width for mobile */
+    height: 150px; /* Optional: Adjust height for mobile */
   }
 
   .text-center {
@@ -8580,35 +8582,41 @@ textarea.form-control {
   #colorlib-main {
       padding-top: 20px;
       width: 100%; /* Ensure main content takes full width */
+      transition: margin-left 0.3s ease; /* Smooth transition for sidebar */
   }
 
   /* Add style for showing sidebar when active */
   #colorlib-page.colorlib-active #colorlib-aside {
-      display: block;
-      position: absolute;
-      width: 250px;
-      background: #fff;
-      z-index: 1000;
-      top: 0;
-      height: 100%;
-  }
+    display: block;
+    position: fixed;
+    width: 80%; /* Increase sidebar width to 80% */
+    max-width: 450px;
+    background: #fff;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: transform 0.3s ease; /* Smooth sidebar transition */
+    transform: translateX(0); /* Ensure it slides in from the left */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
 
   /* Adjust main content to shift when sidebar is open */
   #colorlib-page.colorlib-active #colorlib-main {
-      margin-left: 250px;
+    margin-left: 80%; /* Align with sidebar width */
   }
-}
-
-/* Style the menu toggle button for mobile */
-@media only screen and (max-width: 768px) {
   .js-colorlib-nav-toggle {
-      display: block;
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 1100;
-      font-size: 24px;
-      cursor: pointer;
+    display: block;
+    position: relative;
+    top: 10px;
+    left: -15px;
+    z-index: 1100;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .ftco-section {
+    margin-top: -165px; /* 负值向上移动 */
   }
 }
 
