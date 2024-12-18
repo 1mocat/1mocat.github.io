@@ -8620,3 +8620,35 @@ textarea.form-control {
   }
 }
 
+/* ### for button */
+
+
+
+.btn {
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 6px 8px; /* 增加按钮间距 */
+    font-size: 15px;
+    font-weight: 500;
+    color: #333333; /* 深灰色文字 */
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* 轻微渐变灰色 */
+    border: 1px solid #ced4da; /* 边框颜色 */
+    text-decoration: none;
+    border-radius: 6px; /* 圆角设计 */
+    transition: all 0.3s ease; /* 平滑过渡 */
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+}
+.btn:hover {
+    background: linear-gradient(135deg, #e9ecef, #dee2e6); /* 悬停时加深渐变 */
+    border-color: #adb5bd;
+    color: #000000; /* 悬停时文字变为黑色 */
+    transform: translateY(-2px); /* 悬停时微微上移 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15); /* 阴影加强 */
+}
+.btn:active {
+    transform: translateY(0); /* 点击时回归原位 */
+    box-shadow: none;
+}
+
+
+
