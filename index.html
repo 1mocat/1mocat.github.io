@@ -38,14 +38,22 @@
 	<style>
 		/* 配色方案：深蓝#203655、米色#d9c1a1、浅米色#f6f1e5 */
 		
-		/* 个人照片悬停阴影效果 */
-		.img {
-			transition: box-shadow 0.3s ease;
-		}
+	/* 个人照片悬停阴影效果 */
+	.img {
+		transition: box-shadow 0.3s ease;
+		background-size: cover !important;
+		background-position: center center !important;
+		background-repeat: no-repeat !important;
+	}
 
-		.img:hover {
-			box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-		}
+	.img:hover {
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+	}
+
+	/* 确保头像容器有足够的空间显示 */
+	.hero-wrap .text .img {
+		margin-top: 20px;
+	}
 
 	/* 简介中的链接颜色 */
 	.desc p a {

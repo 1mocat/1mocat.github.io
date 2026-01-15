@@ -7584,11 +7584,14 @@ h1, h2, h3, h4, h5,
     .hero-wrap .text .img {
       width: 200px;
       height: 200px;
-      margin: 0 auto;
+      margin: 20px auto;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;
-      border-radius: 50%; }
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat; }
     .hero-wrap .text .subheading {
       font-size: 24px;
       color: #bfbfbf;
@@ -8555,18 +8558,34 @@ textarea.form-control {
   }
 
   .hero-wrap {
-    padding-top: 0;
-    margin-top: -100px; /* 试着向上移动背景 */
-    /* height: 100px; */
-    background-size: cover; /* 确保背景图片覆盖整个区域 */
-    background-position: center top; /* 固定背景位置为顶部中心 */
+    padding-top: 0px;
+    margin-top: 0;
+    min-height: 120vh !important; /* 增加最小高度，确保背景能覆盖所有内容 */
+    padding-bottom: 100px !important; /* 增加底部内边距 */
+    background-size: cover;
+    background-position: center bottom;
+  }
 
-}
+  /* 确保Research section有足够的顶部边距 */
+  .ftco-section {
+    margin-top: 60px !important;
+    padding-top: 60px !important;
+  }
+
+  .hero-wrap .js-fullheight.d-flex {
+    align-items: flex-start !important;
+    padding-top: 60px;
+    padding-bottom: 80px !important; /* 给底部留出更多空间 */
+    min-height: auto !important; /* 让高度自适应内容 */
+  }
 
   .hero-wrap .text .img {
-    margin-top: 0px; /* 人物照片 Adjust this value to move the image further up */
+    margin-top: 20px; /* 增加上边距，防止头像被裁切 */
     width: 150px; /* Optional: Adjust width for mobile */
     height: 150px; /* Optional: Adjust height for mobile */
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
   }
 
   .text-center {
