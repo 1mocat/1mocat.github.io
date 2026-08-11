@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Welcome to Chengquan Guo's (郭城权) HomePage</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+	<link rel="icon" href="images/yimaoren2.jpg" type="image/png">
+
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<link rel="stylesheet" href="css/aos.css">
+
+	<link rel="stylesheet" href="css/ionicons.min.css">
+
+	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="css/jquery.timepicker.css">
+
+	
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<style>
+		/* 配色方案：深蓝#203655、米色#d9c1a1、浅米色#f6f1e5 */
+		
+	/* 个人照片悬停阴影效果 */
+	.img {
+		transition: box-shadow 0.3s ease;
+		background-size: cover !important;
+		background-position: center center !important;
+		background-repeat: no-repeat !important;
+	}
+
+	.img:hover {
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+	}
+
+	/* 确保头像容器有足够的空间显示 */
+	.hero-wrap .text .img {
+		margin-top: 20px;
+	}
+
+	/* 简介中的链接颜色 */
+	.desc p a {
+		color: #203655 !important;
+		text-decoration: none;
+		border-bottom: 1px solid #203655;
+		transition: all 0.3s ease;
+	}
+
+	.desc p a:hover {
+		color: #d9c1a1 !important;
+		border-bottom-color: #d9c1a1;
+	}
+
+		/* 论文卡片样式 - 无边框、无悬浮浮动 */
+		#selected_work ul li {
+			background: white;
+			padding: 0;
+			margin-bottom: 15px;
+		}
+
+		/* 论文标题 - 深蓝色 */
+		#selected_work ul li h4:first-child {
+			color: #203655;
+			font-weight: bold;
+			font-size: 1.5em;
+			margin-bottom: 5px;
+		}
+
+	/* 作者名 - 黑色 */
+	#selected_work ul li h4:nth-child(2) {
+		color: #333;
+		font-size: 1em !important;
+		font-weight: 400;
+		margin-bottom: 5px;
+	}
+
+		/* 奖项卡片样式 - 无边框、无悬浮浮动 */
+		#honors ul li {
+			background: white;
+			padding: 0;
+			margin-bottom: 8px;
+		}
+
+		#honors ul li h4 {
+			color: #203655;
+		}
+
+		#honors ul li span {
+			color: #666;
+		}
+		
+	/* 减少标题间距 */
+	.heading-section {
+		margin-bottom: 20px !important;
+	}
+	
+	/* 减少section间距 */
+	.ftco-section {
+		padding: 30px 0 !important;
+	}
+
+	/* 让hero-wrap底部和下一个section距离更小 */
+	.hero-wrap {
+		margin-bottom: 0 !important;
+		padding-bottom: 20px !important;
+	}
+
+	.hero-wrap + .ftco-section {
+		margin-top: 0 !important;
+		padding-top: 20px !important;
+	}
+
+	/* 按钮样式 */
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		padding: 6px 14px;
+		margin-right: 8px;
+		margin-bottom: 8px;
+		border-radius: 20px;
+		font-size: 0.9em;
+		font-weight: 600;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		background: white;
+		color: #203655 !important;
+		border: 2px solid #203655;
+		letter-spacing: 0.3px;
+	}
+
+	.btn:hover {
+		background: #d9c1a1;
+		color: #203655 !important;
+		border-color: #d9c1a1;
+		text-decoration: none;
+	}
+
+	/* 按钮图标样式 */
+	.btn-icon {
+		width: 16px;
+		height: 16px;
+		margin-right: 6px;
+		vertical-align: middle;
+	}
+
+	.btn i {
+		margin-right: 6px;
+		font-size: 1em;
+	}
+
+	/* 章节标题 */
+	.heading-section h2 {
+		color: #203655;
+	}
+
+	/* 缩小章节标题和内容的间距 */
+	.heading-section {
+		margin-bottom: 20px !important;
+	}
+
+	/* 侧边栏名字 - 深灰蓝色（介于深蓝和黑色之间） */
+	#colorlib-logo a {
+		color: #1a2a3a !important;
+		font-weight: 700;
+	}
+
+	/* 主页标题中的名字 - 深灰蓝色（介于深蓝和黑色之间） */
+	.desc h1 {
+		color: #1a2a3a !important;
+	}
+
+	/* 侧边栏右侧边界线 */
+	#colorlib-aside {
+		border-right: 2px solid rgba(32, 54, 85, 0.15) !important;
+		box-shadow: 2px 0 8px rgba(32, 54, 85, 0.08);
+		overflow-x: hidden !important;
+		overflow-y: auto !important;
+	}
+
+	/* 隐藏滚动条 */
+	#colorlib-aside::-webkit-scrollbar {
+		width: 0px;
+		display: none;
+	}
+
+	#colorlib-aside {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	/* 隐藏导航切换按钮（小箭头） */
+	.js-colorlib-nav-toggle,
+	.colorlib-nav-toggle {
+		display: none !important;
+		visibility: hidden !important;
+		opacity: 0 !important;
+		width: 0 !important;
+		height: 0 !important;
+	}
+	
+	/* 隐藏可能的其他切换按钮 */
+	a[href="#"].js-colorlib-nav-toggle {
+		display: none !important;
+	}
+
+	/* 会议信息样式 - 柔和标签样式（左侧边条） */
+	.conference-outlined {
+		display: inline-block;
+		padding: 6px 14px;
+		margin-right: 12px;
+		background: #f6f1e5;
+		color: #203655 !important;
+		font-size: 0.9em;
+		font-weight: 600;
+		border-radius: 4px;
+		border-left: 4px solid #d9c1a1;
+		min-width: 140px;
+		text-align: center;
+		box-sizing: border-box;
+		white-space: nowrap;
+		vertical-align: middle;
+	}
+</style>
+</head>
+
+<body>
+
+	<div id="colorlib-page">
+		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
+			<h1 id="colorlib-logo"><a href="index.html">Chengquan Guo</a></h1>
+			<nav id="colorlib-main-menu" role="navigation" class="main-menu-container">
+				<ul>
+					<li class="colorlib-active" style="margin-bottom: 20px;">
+						<a href="index.html" style="text-decoration: none;">
+							<i class="fas fa-home"></i> Home
+						</a>
+					</li>
+					<!-- <li>
+						<a href="works.html" style="text-decoration: none;">
+							<i class="fas fa-briefcase"></i> Works
+						</a>
+					</li>
+					<li>
+						<a href="honors.html" style="text-decoration: none;">
+							<i class="fas fa-award"></i> Honors and Awards
+						</a>
+					</li> -->
+					<!-- <li>
+						<a href="cv.html" style="text-decoration: none;">
+							<i class="fas fa-file-alt"></i> CV
+						</a>
+					</li> -->
+					<li style="margin-bottom: 20px;">
+						<a href="mailto:chengquanguo@uchicago.edu" style="text-decoration: none;">
+							<i class="fas fa-envelope"></i> chengquanguo At uchicago.edu
+						</a>
+					</li>
+					<li style="margin-bottom: 20px;">
+						<a href="https://github.com/1mocat" target="_blank" style="text-decoration: none;">
+							<i class="fab fa-github"></i> 1mocat
+						</a>
+					</li>
+					<li style="margin-bottom: 20px;">
+						<a href="https://scholar.google.com/citations?user=ubFLQuEAAAAJ&hl=en&authuser=1" target="_blank" style="text-decoration: none;">
+							<i class="fas fa-graduation-cap"></i> Google Scholar
+						</a>
+					</li>
+					<li style="margin-bottom: 20px;">
+						<a href="https://www.linkedin.com/in/chengquan-guo-ba57782b9/" target="_blank" style="text-decoration: none;">
+							<i class="fab fa-linkedin"></i> LinkedIn
+						</a>
+					</li>
+					<li style="margin-bottom: 20px;">
+						<a href="https://x.com/ChengquanGuo" target="_blank" style="text-decoration: none;">
+							<i class="fab fa-x-twitter"></i> X (Twitter)
+						</a>
+					</li>
+				</ul>
+			</nav>
+			
+		</aside>
+
+		
+		<div id="colorlib-main">
+			<div class="hero-wrap js-fullheight" id="parallax-bg" style="background-image: url(images/bg_1.jpg); background-position: center bottom; background-size: cover; background-attachment: scroll;"
+				data-stellar-background-ratio="0.5">
+				<div class="overlay"></div>
+				<div class="js-fullheight d-flex justify-content-center align-items-center">
+					<div class="col-md-8 text text-center">
+						<div class="img mb-4" style="background-image: url(images/self1.jpg);"></div>
+
+						<div class="desc">
+							<h2 class="subheading" style="font-size: 1.5rem;">Hello I'm</h2>
+							<h1 class="mb-4" style="font-size: 2rem; color: #1a2a3a;">Chengquan Guo <span style="font-family: 'Ma Shan Zheng', sans-serif;">(郭城权)</span></h1>
+							<p class="mb-4" style="font-size: 1.3rem;">
+								I am a first year PhD student in the  <strong><a href="https://aisecure.github.io/" target="_blank">Secure Learning Lab</a></strong> at <strong><a href="https://cs.uchicago.edu/" target="_blank">the University of Chicago</a></strong> advised by <strong><a href="https://aisecure.github.io/" target="_blank">Prof. Bo Li</a></strong> and <strong><a href="https://zhangce.github.io" target="_blank">Prof. Ce Zhang</a></strong>.
+								My research interests lie in <strong>Trustworthy AI</strong>, with a focus on building reliable, safe, and robust AI systems for real-world applications.
+								I am a research intern at <strong><a href="https://www.microsoft.com/en-us/research/" target="_blank">Microsoft Research</a></strong> in Summer 2026.
+								<!-- in <strong>software engineering and security.</strong> -->
+								<!-- During my internship, I have focused primarily on code agents and large language models (LLMs), while maintaining a broader interest in other areas of safety and security within artificial intelligence.</p> -->
+								<!-- <br>My long-term goal is to promote the secure and responsible deployment of artificial intelligence systems in real-world applications. -->
+								<!-- During my internship, I have focused primarily on the domain of code agents & LLM. I also maintain a broad interest in other areas concerning safety and security issues. -->
+							</div>
+					</div>
+				</div>
+			</div>
+
+			<section class="ftco-section" style="margin-top: 0px; padding-top: 20px;">
+				<div class="container">
+					<div class="row justify-content-center mb-3 pb-1">
+						<div class="col-md-7 heading-section text-center ftco-animate">
+							<h2 class="mb-3">Research</h2>
+							<!-- <p>A small river named Duden flows by their place and supplies it with the necessary
+								regelialia. It is a paradisematic country.</p> -->
+						</div>
+					</div>
+					<div id="selected_work" class="row ftco-animate">
+						<div class="col-md-12">
+							<ul class="list-unstyled">
+								<p>"*" stands for equal contribution.</p>
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em;">BlueCodeAgent: A Blue Teaming Agent Powered by Automated Red Teaming for CodeGen AI</h4>
+									<h4 style="font-size: 1.35em; font-weight: 500;"><u>Chengquan Guo</u>, Yuzhou Nie, Chulin Xie, Zinan Lin, Wenbo Guo, Bo Li</h4>
+									<div>
+										<span class="conference-outlined">ICML 2026</span>
+										<a class="btn" href="https://arxiv.org/abs/2510.18131" target="_blank">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										</a>
+									</a>
+									<a class="btn" href="https://github.com/1mocat/BlueCodeAgent" target="_blank">
+									<i class="fab fa-github"></i> Code
+								</a>
+									</div>
+								</li>
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em;">RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents</h4>
+									<h4 style="font-size: 1.35em; font-weight: 500;"><u>Chengquan Guo</u>, Chulin Xie, Yu Yang, Zhaorun Chen, Zinan Lin, Xander Davies, Yarin Gal, Dawn Song, Bo Li</h4>
+									<div>
+										<span class="conference-outlined">ICLR 2026</span>
+										<a class="btn" href="https://arxiv.org/abs/2510.02609" target="_blank">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										</a>
+											<a class="btn" href="https://github.com/1mocat/RedCodeAgent" target="_blank">
+											<i class="fab fa-github"></i> Code
+										</a>
+									</div>
+								</li>
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em;">RedCode: Risky Code Execution and Generation Benchmark for Code Agents</h4>
+									<h4 style="font-size: 1.35em; font-weight: 500;"><u>Chengquan Guo*</u>, Xun Liu*, Chulin Xie*, Andy Zhou, Yi Zeng, Zinan Lin, Dawn Song, Bo Li</h4>
+									<div>
+										<span class="conference-outlined">NeurIPS 2024</span>
+										<a class="btn" href="https://arxiv.org/abs/2411.07781" target="_blank">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										</a>
+										<a class="btn" href="https://github.com/ai-secure/redcode" target="_blank">
+											<i class="fab fa-github"></i> Code
+										</a>
+										<a class="btn" href="https://redcode-agent.github.io/" target="_blank">
+											🌐 Website
+										</a>
+									</div>
+								</li>
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em;">GUARDSET-X: Multi-Domain, Policy-Grounded, AI Security Guardrail Benchmark</h4>
+									<h4 style="font-size: 1.35em; font-weight: 500;">Mintong Kang*, Zhaorun Chen*, Chejian Xu*, Jiawei Zhang*, <u>Chengquan Guo*</u>, Minzhou Pan, Ivan Revilla, Yu Sun, Bo Li</h4>
+									<div>
+										<span class="conference-outlined">NeurIPS 2025</span>
+										<a class="btn" href="https://arxiv.org/pdf/2506.19054" target="_blank">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										</a>
+										<a class="btn" href="https://github.com/AI-secure/PolyGuard" target="_blank">
+											<i class="fab fa-github"></i> Code
+										</a>
+									</div>
+								</li>
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em;">MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models</h4>
+									<h4 style="font-size: 1.35em; font-weight: 500;">Chejian Xu, Jiawei Zhang, Zhaorun Chen, Chulin Xie, Mintong Kang, Yujin Potter, Zhun Wang, Zhuowen Yuan, Alexander Xiong,<br>Zidi Xiong, Chenhui Zhang, Lingzhi Yuan, Yi Zeng, Peiyang Xu, <u>Chengquan Guo</u>, Andy Zhou, Jeffrey Ziwei Tan, Xuandong Zhao,<br> Francesco Pinto, Zhen Xiang, Yu Gai, Zinan Lin, Dan Hendrycks, Bo Li, Dawn Song</h4>
+									<div>
+										<span class="conference-outlined">ICLR 2025</span>
+										<a class="btn" href="https://arxiv.org/pdf/2503.14827" target="_blank">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										</a>
+										<a class="btn" href="https://github.com/AI-secure/MMDT" target="_blank">
+											<i class="fab fa-github"></i> Code
+										</a>
+										<a class="btn" href="https://mmdecodingtrust.github.io/" target="_blank">
+											🌐 Website
+										</a>
+									</div>
+								</li>
+								
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em;">VulnLLM-R: Specialized Reasoning LLM with Agent Scaffold for Vulnerability Detection</h4>
+									<h4 style="font-size: 1.35em; font-weight: 500;">Yuzhou Nie, Hongwei Li, <u>Chengquan Guo</u>, Ruizhe Jiang, Zhun Wang, Bo Li, Dawn Song, Wenbo Guo</h4>
+									<div>
+										<span class="conference-outlined">Preprint 2025</span>
+										<a class="btn" href="https://arxiv.org/abs/2512.07533" target="_blank">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										</a>
+										<a class="btn" href="https://github.com/ucsb-mlsec/VulnLLM-R" target="_blank">
+											<i class="fab fa-github"></i> Code
+										</a>
+									</div>
+								</li>
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em;">DecodingTrust-Agent Platform (DTap): A Controllable and Interactive Red-Teaming Platform for AI Agents</h4>
+									<h4 style="font-size: 1.35em; font-weight: 500;">Zhaorun Chen, Xun Liu, Haibo Tong, <u>Chengquan Guo</u>, Yuzhou Nie, Jiawei Zhang, Mintong Kang, Chejian Xu, Qichang Liu, Xiaogeng Liu, Tianneng Shi, Chaowei Xiao, Sanmi Koyejo, Percy Liang, Wenbo Guo, Dawn Song, Bo Li</h4>
+									<div>
+										<span class="conference-outlined">Preprint 2026</span>
+										<a class="btn" href="https://arxiv.org/abs/2605.04808" target="_blank">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										</a>
+										<a class="btn" href="https://github.com/AI-secure/DecodingTrust-Agent" target="_blank">
+											<i class="fab fa-github"></i> Code
+										</a>
+										<a class="btn" href="https://decodingtrust-agent.com" target="_blank">
+											🌐 Website
+										</a>
+									</div>
+								</li>
+								<!-- Add more papers as needed -->
+							</ul>
+						</div>
+					</div>
+						
+					<!-- </div> -->
+				</div>
+			</section>
+
+			<section class="ftco-section" style="padding-top: 10px;">
+				<div id="honors" class="container">
+					<div class="row justify-content-center mb-3 pb-1">
+						<div class="col-md-7 heading-section text-center ftco-animate">
+							<h2 class="mb-3" style="font-size: 2em;">Honors & Awards</h2>
+							<!-- <p>A small river named Duden flows by their place and supplies it with the necessary
+								regelialia. It is a paradisematic country.</p> -->
+						</div>
+					</div>
+					<div class="row ftco-animate">
+						<div class="col-md-12">
+							<ul class="list-unstyled">
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em; display: inline;">Outstanding Graduate, Provincial Level </h4>
+									<span style="font-size: 1.35em; font-weight: 300;">(top 3%), 2025</span>
+								</li>
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em; display: inline;">National Scholarship</h4>
+									<span style="font-size: 1.35em; font-weight: 300;">(top 2%), 2024</span>
+								</li>
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em; display: inline;">Provincial Government Scholarship</h4>
+									<span style="font-size: 1.35em; font-weight: 300;">(top 3%), 2023</span>
+								</li>
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em; display: inline;">First-Class Scholarship in Zhejiang University</h4>
+									<span style="font-size: 1.35em; font-weight: 300;">* 2 (top 3%), 2023 & 2024</span>
+								</li>
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em; display: inline;">Tencent Scholarship</h4>
+									<span style="font-size: 1.35em; font-weight: 300;">2023</span>
+								</li>
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em; display: inline;">Outstanding Student</h4>
+									<span style="font-size: 1.35em; font-weight: 300;">* 3, 2022, 2023, 2024</span>
+								</li>
+								<!-- <li>
+									<h4 style="font-weight: bold; font-size: 1.5em; display: inline;">Pioneer of External Communication</h4>
+									<span style="font-size: 1.35em; font-weight: 300;">* 2, 2023 & 2024</span>
+								</li>
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em; display: inline;">Pioneer of Public Service</h4>
+									<span style="font-size: 1.35em; font-weight: 300;">2022</span>
+								</li> -->
+							</ul>
+						</div>
+					</div>
+
+					<!-- <div class="row"> -->
+						
+					<!-- </div> -->
+				</div>
+				
+			</section>
+<!-- 
+			<section class="ftco-section" style="padding-top: 10px;">
+				<style>
+					#map-container {
+						width: 100%; /* 占据父元素的 100% 宽度 */
+						max-width: 400px; /* 可设置一个最大宽度 */
+						margin: 0 auto; /* 居中 */
+						position: relative; /* 确保内容按比例缩放 */
+					}
+					iframe {
+						width: 100%; /* 使 iframe 自适应父容器宽度 */
+						height: 0;
+						padding-bottom: 56.25%; /* 16:9 比例 */
+						border: none;
+					}
+				</style>
+				<div class="container">
+					<div class="row justify-content-center mb-3 pb-1">
+						<div class="col-md-7 heading-section text-center ftco-animate">
+							<h2 class="mb-3" style="font-size: 2em;">Visitor Map</h2>
+						</div>
+					</div>
+					<div class="row ftco-animate">
+						<div class="col-md-12">
+							<div id="map-container">
+								<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=IjyhZmwA2irVzg__K87AC-9L8d2bj_lGU6M_TRIVeWc&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section> -->
+			
+
+			<!-- <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=IjyhZmwA2irVzg__K87AC-9L8d2bj_lGU6M_TRIVeWc"></script> -->
+
+			
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" />
+		</svg></div>
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/jquery.timepicker.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script src="js/main.js"></script>
+
+	<!-- 背景山视差滚动效果 - 底部固定式 -->
+	<script>
+		(function() {
+			const parallaxBg = document.getElementById('parallax-bg');
+			if (!parallaxBg) return;
+
+			// 视差速度系数：数值越小，视差效果越明显
+			const parallaxSpeed = 0.15;
+			// 底部固定距离（px）- 负值表示向下偏移，让山底更接近Research标题
+			const bottomOffset = 100;
+			
+			function updateParallax() {
+				const scrolled = window.pageYOffset || window.scrollY;
+				// 向下滚动时，山微微向上移动，但保持底部相对固定
+				const yPos = bottomOffset - (scrolled * parallaxSpeed);
+				// 使用 calc 来保持底部位置
+				parallaxBg.style.backgroundPosition = 'center calc(100% + ' + yPos + 'px)';
+			}
+
+			// 使用 requestAnimationFrame 优化性能
+			let ticking = false;
+			window.addEventListener('scroll', function() {
+				if (!ticking) {
+					window.requestAnimationFrame(function() {
+						updateParallax();
+						ticking = false;
+					});
+					ticking = true;
+				}
+			});
+
+			// 初始化
+			updateParallax();
+		})();
+	</script>
+
+</body>
+
+</html>
