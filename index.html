@@ -237,6 +237,156 @@
 		white-space: nowrap;
 		vertical-align: middle;
 	}
+
+	/* ===== 研究主线 (research through-line) ===== */
+	.arc-intro {
+		font-size: 1.05em;
+		color: #333;
+		text-align: center;
+		max-width: 780px;
+		margin: 0 auto 22px;
+		line-height: 1.6;
+	}
+
+	.arc-intro strong {
+		color: #203655;
+	}
+
+	.research-arc {
+		display: flex;
+		align-items: stretch;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0;
+		margin-bottom: 34px;
+	}
+
+	.arc-step {
+		flex: 1 1 200px;
+		min-width: 0;
+		display: flex;
+		flex-direction: column;
+		padding: 16px 18px;
+		background: #f6f1e5;
+		border-radius: 6px;
+		border-top: 3px solid #b4543f;
+		text-decoration: none !important;
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
+	}
+
+	.arc-step:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 8px 20px rgba(32, 54, 85, 0.13);
+		text-decoration: none !important;
+	}
+
+	/* 第三步是 blue teaming —— 换成深蓝，视觉上点出红队到蓝队的转折 */
+	.arc-step.is-blue {
+		border-top-color: #203655;
+		background: #eef1f6;
+	}
+
+	.arc-num {
+		font-size: 0.72em;
+		font-weight: 700;
+		letter-spacing: 1.5px;
+		color: #b4543f;
+		margin-bottom: 6px;
+	}
+
+	.arc-step.is-blue .arc-num {
+		color: #203655;
+	}
+
+	.arc-name {
+		font-size: 1.12em;
+		font-weight: 700;
+		color: #203655;
+		margin-bottom: 3px;
+	}
+
+	.arc-role {
+		font-size: 0.97em;
+		font-weight: 600;
+		color: #b4543f;
+		margin-bottom: 6px;
+	}
+
+	.arc-step.is-blue .arc-role {
+		color: #203655;
+	}
+
+	.arc-note {
+		font-size: 0.87em;
+		color: #666;
+		line-height: 1.45;
+	}
+
+	/* 步骤之间的箭头 */
+	.arc-join {
+		flex: 0 0 34px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #d9c1a1;
+		font-size: 1.35em;
+		line-height: 1;
+	}
+
+	@media (max-width: 767px) {
+		.research-arc {
+			flex-direction: column;
+		}
+		.arc-step {
+			flex: 1 1 auto;
+		}
+		.arc-join {
+			flex: 0 0 26px;
+			transform: rotate(90deg);
+		}
+	}
+
+	/* 论文条目上标注它在主线中的位置 */
+	.arc-tag {
+		display: inline-block;
+		padding: 2px 9px;
+		margin-left: 8px;
+		border-radius: 10px;
+		background: #f6f1e5;
+		border: 1px solid #d9c1a1;
+		color: #b4543f;
+		font-size: 0.62em;
+		font-weight: 700;
+		letter-spacing: 0.6px;
+		vertical-align: middle;
+		white-space: nowrap;
+	}
+
+	.arc-tag.is-blue {
+		background: #eef1f6;
+		border-color: #b9c4d6;
+		color: #203655;
+	}
+
+	/* 让锚点跳转不被遮挡 */
+	.arc-anchor {
+		scroll-margin-top: 24px;
+	}
+
+	/* Academic Service 沿用 Honors 的排版 */
+	#service ul li {
+		background: white;
+		padding: 0;
+		margin-bottom: 8px;
+	}
+
+	#service ul li h4 {
+		color: #203655;
+	}
+
+	#service ul li span {
+		color: #666;
+	}
 </style>
 </head>
 
@@ -331,26 +481,55 @@
 								regelialia. It is a paradisematic country.</p> -->
 						</div>
 					</div>
+					<div class="row ftco-animate">
+						<div class="col-md-12">
+							<p class="arc-intro">
+								Much of my work follows a single through-line on <strong>code-agent safety</strong>:
+								first measure the risk, then automate the attack, then turn the attack into a defense.
+							</p>
+							<div class="research-arc">
+								<a class="arc-step" href="#p-redcode">
+									<span class="arc-num">01 &middot; MEASURE</span>
+									<span class="arc-name">RedCode</span>
+									<span class="arc-role">Benchmark the risk</span>
+									<span class="arc-note">A benchmark exposing how code agents execute and generate risky code.</span>
+								</a>
+								<span class="arc-join" aria-hidden="true">&rarr;</span>
+								<a class="arc-step" href="#p-redcodeagent">
+									<span class="arc-num">02 &middot; ATTACK</span>
+									<span class="arc-name">RedCodeAgent</span>
+									<span class="arc-role">Automate red teaming</span>
+									<span class="arc-note">An adaptive agent that discovers those failures on its own, at scale.</span>
+								</a>
+								<span class="arc-join" aria-hidden="true">&rarr;</span>
+								<a class="arc-step is-blue" href="#p-bluecodeagent">
+									<span class="arc-num">03 &middot; DEFEND</span>
+									<span class="arc-name">BlueCodeAgent</span>
+									<span class="arc-role">Attacks become defenses</span>
+									<span class="arc-note">Automated red teaming feeds a blue-teaming agent that guards CodeGen AI.</span>
+								</a>
+							</div>
+						</div>
+					</div>
 					<div id="selected_work" class="row ftco-animate">
 						<div class="col-md-12">
 							<ul class="list-unstyled">
 								<p>"*" stands for equal contribution.</p>
-								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">BlueCodeAgent: A Blue Teaming Agent Powered by Automated Red Teaming for CodeGen AI</h4>
+								<li id="p-bluecodeagent" class="arc-anchor">
+									<h4 style="font-weight: bold; font-size: 1.5em;">BlueCodeAgent: A Blue Teaming Agent Powered by Automated Red Teaming for CodeGen AI<span class="arc-tag is-blue">03 &middot; DEFEND</span></h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;"><u>Chengquan Guo</u>, Yuzhou Nie, Chulin Xie, Zinan Lin, Wenbo Guo, Bo Li</h4>
 									<div>
 										<span class="conference-outlined">ICML 2026</span>
 										<a class="btn" href="https://arxiv.org/abs/2510.18131" target="_blank">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
 										</a>
-									</a>
-									<a class="btn" href="https://github.com/1mocat/BlueCodeAgent" target="_blank">
-									<i class="fab fa-github"></i> Code
-								</a>
+										<a class="btn" href="https://github.com/1mocat/BlueCodeAgent" target="_blank">
+											<i class="fab fa-github"></i> Code
+										</a>
 									</div>
 								</li>
-								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents</h4>
+								<li id="p-redcodeagent" class="arc-anchor">
+									<h4 style="font-weight: bold; font-size: 1.5em;">RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents<span class="arc-tag">02 &middot; ATTACK</span></h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;"><u>Chengquan Guo</u>, Chulin Xie, Yu Yang, Zhaorun Chen, Zinan Lin, Xander Davies, Yarin Gal, Dawn Song, Bo Li</h4>
 									<div>
 										<span class="conference-outlined">ICLR 2026</span>
@@ -362,8 +541,8 @@
 										</a>
 									</div>
 								</li>
-								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">RedCode: Risky Code Execution and Generation Benchmark for Code Agents</h4>
+								<li id="p-redcode" class="arc-anchor">
+									<h4 style="font-weight: bold; font-size: 1.5em;">RedCode: Risky Code Execution and Generation Benchmark for Code Agents<span class="arc-tag">01 &middot; MEASURE</span></h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;"><u>Chengquan Guo*</u>, Xun Liu*, Chulin Xie*, Andy Zhou, Yi Zeng, Zinan Lin, Dawn Song, Bo Li</h4>
 									<div>
 										<span class="conference-outlined">NeurIPS 2024</span>
@@ -443,6 +622,26 @@
 					</div>
 						
 					<!-- </div> -->
+				</div>
+			</section>
+
+			<section class="ftco-section" style="padding-top: 10px;">
+				<div id="service" class="container">
+					<div class="row justify-content-center mb-3 pb-1">
+						<div class="col-md-7 heading-section text-center ftco-animate">
+							<h2 class="mb-3" style="font-size: 2em;">Academic Service</h2>
+						</div>
+					</div>
+					<div class="row ftco-animate">
+						<div class="col-md-12">
+							<ul class="list-unstyled">
+								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em; display: inline;">Reviewer, NeurIPS / ICLR / ICML</h4>
+									<span style="font-size: 1.35em; font-weight: 300;">since 2025</span>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</section>
 
