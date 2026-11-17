@@ -180,6 +180,13 @@
 	.hero-wrap .text .img { margin-top: 0; }
 	.hero-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; background: url(images/bg_1.jpg) no-repeat center calc(100% + 100px) / cover; will-change: transform; }
 
+	/* bio: research focus leads, affiliations are secondary */
+	.bio-meta { font-size: 1.2rem; line-height: 1.75; color: #7a838f; }
+	.bio-focus { color: #203655; font-weight: 700; }
+	.inline-logo { height: 1.5em; width: auto; vertical-align: -0.38em; margin: 0 2px 0 1px; }
+	.desc p.bio-meta a, .bio-meta a { color: #55606e !important; font-weight: 500; border-bottom: 1px solid #c3cad3; text-decoration: none; }
+	.desc p.bio-meta a:hover, .bio-meta a:hover { color: #203655 !important; border-bottom-color: #203655; }
+
 	/* narrow desktop windows: the sidebar is only ~250-350px wide, so tighten it instead of squashing */
 	@media (min-width: 992px) and (max-width: 1399.98px) {
 		#colorlib-aside { padding-left: 18px; padding-right: 18px; }
@@ -217,7 +224,7 @@
 		.hero-wrap { min-height: calc(100vh - 88px) !important; }
 		.hero-inner { padding: 20px 0 110px; }
 		.hero-wrap .text .img { width: 150px !important; height: 150px !important; margin-left: auto; margin-right: auto; }
-		.hero-wrap p.mb-4 { font-size: 1.05rem !important; }
+		.hero-wrap .text p.bio-meta { font-size: 1rem !important; line-height: 1.65; }
 		.hero-wrap h1 { font-size: 1.6rem !important; }
 		.ftco-section .container { padding-left: 16px; padding-right: 16px; }
 		#selected_work ul li { padding-left: 38px; }
@@ -453,11 +460,11 @@
 						<div class="desc">
 							<h2 class="subheading" style="font-size: 1.5rem;">Hello I'm</h2>
 							<h1 class="mb-4" style="font-size: 2rem; color: #1a2a3a;">Chengquan Guo <span style="font-family: 'Ma Shan Zheng', sans-serif;">(郭城权)</span></h1>
-							<p class="mb-4" style="font-size: 1.3rem;">
-								I am a second year PhD student in the <strong><a href="https://aisecure.github.io/" target="_blank">Secure Learning Lab</a></strong> at <strong><a href="https://cs.uchicago.edu/" target="_blank">the University of Chicago</a></strong> advised by <strong><a href="https://aisecure.github.io/" target="_blank">Prof. Bo Li</a></strong> and <strong><a href="https://zhangce.github.io" target="_blank">Prof. Ce Zhang</a></strong>.
-								Before that, I did my undergraduate studies at <strong><a href="https://www.zju.edu.cn/english/" target="_blank">Zhejiang University</a></strong> from 2021 to 2025.
-								My research interests lie in <strong>Trustworthy AI</strong>, with a focus on building reliable, safe, and robust AI systems for real-world applications.
-								I was a research intern at <strong><a href="https://www.microsoft.com/en-us/research/" target="_blank">Microsoft Research</a></strong> in Summer 2026.
+								<p class="bio-meta mb-4">
+									I am a second-year PhD student in the <a href="https://aisecure.github.io/" target="_blank">Secure Learning Lab</a> at <span style="white-space: nowrap;"><img src="images/uchicago-shield.png" class="inline-logo" alt="University of Chicago shield" width="76" height="96"> <a href="https://cs.uchicago.edu/" target="_blank">the</a></span><a href="https://cs.uchicago.edu/" target="_blank"> University of Chicago</a>, advised by <a href="https://aisecure.github.io/" target="_blank">Prof. Bo Li</a> and <a href="https://zhangce.github.io" target="_blank">Prof. Ce Zhang</a>.
+									<strong class="bio-focus">I study the safety and security of LLM agents, focusing on automated red teaming, prompt injection, and contextual privacy.</strong>
+									Before that, I did my undergraduate studies at <a href="https://www.zju.edu.cn/english/" target="_blank">Zhejiang University</a> (2021&ndash;2025).
+									I was a research intern at <a href="https://www.microsoft.com/en-us/research/" target="_blank">Microsoft Research</a> in Summer 2026.
 								<!-- in <strong>software engineering and security.</strong> -->
 								<!-- During my internship, I have focused primarily on code agents and large language models (LLMs), while maintaining a broader interest in other areas of safety and security within artificial intelligence.</p> -->
 								<!-- <br>My long-term goal is to promote the secure and responsible deployment of artificial intelligence systems in real-world applications. -->
@@ -752,11 +759,11 @@
 									<h4 style="font-weight: bold; font-size: 1.5em; display: inline;">Tencent Scholarship</h4>
 									<span style="font-size: 1.35em; font-weight: 300;">2023</span>
 								</li>
-								<li>
+								<!-- <li>
 									<h4 style="font-weight: bold; font-size: 1.5em; display: inline;">Outstanding Student</h4>
 									<span style="font-size: 1.35em; font-weight: 300;">* 3, 2022, 2023, 2024</span>
 								</li>
-								<!-- <li>
+								<li>
 									<h4 style="font-weight: bold; font-size: 1.5em; display: inline;">Pioneer of External Communication</h4>
 									<span style="font-size: 1.35em; font-weight: 300;">* 2, 2023 & 2024</span>
 								</li>
