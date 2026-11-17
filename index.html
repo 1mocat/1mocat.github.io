@@ -208,7 +208,9 @@
 	#mobile-bar { display: none; }
 	@media (max-width: 991.98px) {
 		#colorlib-aside { display: none !important; }
-		#mobile-bar { display: block; position: fixed; top: 0; left: 0; right: 0; z-index: 1002; background: rgba(255,255,255,0.96); border-bottom: 1px solid #e3e7ed; box-shadow: 0 2px 8px rgba(32,54,85,0.06); }
+		#mobile-bar { display: block; position: fixed; top: 0; left: 0; right: 0; z-index: 1002; background: rgba(255,255,255,0.14); -webkit-backdrop-filter: blur(9px) saturate(180%); backdrop-filter: blur(9px) saturate(180%); border-bottom: 1px solid rgba(255,255,255,0.4); box-shadow: 0 1px 0 rgba(32,54,85,0.06), 0 6px 20px rgba(32,54,85,0.07); }
+		/* browsers without backdrop blur get a nearly opaque bar so text under it never shows through sharply */
+		@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) { #mobile-bar { background: rgba(255,255,255,0.95); } }
 		#mobile-bar { transition: transform 0.28s ease; will-change: transform; }
 		#mobile-bar.bar-hidden { transform: translateY(-100%); box-shadow: none; }
 		.mobile-bar-top { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px 6px; gap: 10px; }
@@ -217,8 +219,10 @@
 		.mobile-social a { width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #203655; color: white !important; font-size: 15px; text-decoration: none; }
 		#mobile-nav { display: flex; gap: 2px; padding: 0 8px 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
 		#mobile-nav::-webkit-scrollbar { display: none; }
-		#mobile-nav a { flex: 1 0 auto; text-align: center; padding: 5px 9px; border-radius: 16px; font-size: 13.5px; font-weight: 600; color: #5b6676; text-decoration: none; white-space: nowrap; }
-		#mobile-nav a.colorlib-active { background: #203655; color: white; }
+		#mobile-nav a { flex: 1 0 auto; text-align: center; padding: 5px 9px; border-radius: 16px; font-size: 13.5px; font-weight: 600; color: #3d4a5c; text-decoration: none; white-space: nowrap; }
+		/* soft white halo keeps the labels readable when dark content passes underneath */
+		.mobile-name, #mobile-nav a { text-shadow: 0 0 6px rgba(255,255,255,0.95), 0 0 2px rgba(255,255,255,0.9); }
+		#mobile-nav a.colorlib-active { background: #203655; color: white; text-shadow: none; }
 		#colorlib-main { padding-top: 88px; }
 		#news, #research, #honors, #service { scroll-margin-top: 96px; }
 		.hero-wrap { min-height: calc(100vh - 88px) !important; }
