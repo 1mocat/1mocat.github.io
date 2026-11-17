@@ -94,6 +94,27 @@
 		updateSpy();
 	}
 
+	// mobile top bar: slide away while scrolling down the page, come back when scrolling up
+	var bar = document.getElementById('mobile-bar');
+	if (bar) {
+		var lastY = window.pageYOffset;
+		var updateBar = function () {
+			var y = window.pageYOffset, d = y - lastY;
+			if (y < 60 || pinned !== null) {
+				// near the top, or right after tapping a nav chip: always visible
+				bar.classList.remove('bar-hidden');
+			} else if (d > 6) {
+				bar.classList.add('bar-hidden');
+			} else if (d < -6) {
+				bar.classList.remove('bar-hidden');
+			}
+			if (Math.abs(d) > 6) lastY = y;
+		};
+		// scroll events are already delivered at most once per frame, and this handler only toggles a class
+		window.addEventListener('scroll', updateBar, { passive: true });
+		bar.addEventListener('click', function () { bar.classList.remove('bar-hidden'); });
+	}
+
 	// hero background parallax: move a composited layer instead of repainting the background
 	var bg = document.getElementById('parallax-bg-layer');
 	if (bg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

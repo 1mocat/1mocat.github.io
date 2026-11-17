@@ -202,6 +202,8 @@
 	@media (max-width: 991.98px) {
 		#colorlib-aside { display: none !important; }
 		#mobile-bar { display: block; position: fixed; top: 0; left: 0; right: 0; z-index: 1002; background: rgba(255,255,255,0.96); border-bottom: 1px solid #e3e7ed; box-shadow: 0 2px 8px rgba(32,54,85,0.06); }
+		#mobile-bar { transition: transform 0.28s ease; will-change: transform; }
+		#mobile-bar.bar-hidden { transform: translateY(-100%); box-shadow: none; }
 		.mobile-bar-top { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px 6px; gap: 10px; }
 		.mobile-name { font-family: "Poppins", Arial, sans-serif; font-weight: 700; font-size: 18px; color: #1a2a3a !important; text-decoration: none !important; white-space: nowrap; }
 		.mobile-social { display: flex; gap: 6px; flex-shrink: 0; }
