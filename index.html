@@ -228,6 +228,7 @@
 		.hero-wrap h1 { font-size: 1.6rem !important; }
 		.ftco-section .container { padding-left: 16px; padding-right: 16px; }
 		#selected_work ul li { padding-left: 38px; }
+		#honors ul li, #service ul li { padding-left: 38px !important; }
 		#selected_work ul li h4:first-child { font-size: 1.15em !important; line-height: 1.35; }
 		#selected_work ul li h4:nth-child(2) { font-size: 0.92em !important; line-height: 1.5; }
 		#selected_work ul li h4 br { display: none; }
@@ -239,7 +240,6 @@
 		#selected_work a.btn .btn-icon, #selected_work a.btn i { margin-right: 0; }
 		#selected_work a.btn .btn-icon { width: 18px; height: 18px; }
 		#selected_work .conference-outlined { min-width: 0 !important; width: auto !important; padding: 6px 10px !important; margin-right: 6px !important; font-size: 0.82em !important; white-space: nowrap; }
-		.news-list { max-height: 190px; }
 		#honors ul li h4, #service ul li h4 { font-size: 1.1em !important; }
 		#honors ul li span, #service ul li span { font-size: 0.95em; }
 		.heading-section h2 { font-size: 1.7em !important; }
@@ -270,13 +270,16 @@
 	#news { padding-top: 10px !important; padding-bottom: 0 !important; }
 	#news .heading-section { margin-bottom: 6px !important; }
 	#news .heading-section h2 { font-size: 2em; margin-bottom: 0 !important; }
-	.news-list { max-height: 152px; overflow-y: auto; margin: 0 auto; padding: 4px 12px 4px 0; scrollbar-width: thin; scrollbar-color: #c9d1dc transparent; }
+	.news-list { margin: 0 auto; padding: 4px 0; }
 	.news-list li { display: flex; align-items: baseline; gap: 12px; padding: 3px 0; }
 	.news-date { flex: 0 0 84px; font-weight: 600; font-size: 0.88em; color: #203655; white-space: nowrap; }
 	.news-text { font-size: 0.98em; color: #333; line-height: 1.45; }
 	.news-text a { color: #203655; border-bottom: 1px solid #203655; text-decoration: none; }
 	.news-text a:hover { color: #b08a55; border-bottom-color: #d9c1a1; }
 	@media (max-width: 576px) { .news-list li { flex-direction: column; gap: 0; } .news-date { flex: none; } }
+
+	/* honors and service share the left edge of the paper titles */
+	#honors ul li, #service ul li { padding-left: 44px !important; }
 
 	/* paper TL;DR + figure toggle */
 	#selected_work ul li { position: relative; padding-left: 44px; }
@@ -363,6 +366,13 @@
 		box-sizing: border-box;
 		white-space: nowrap;
 		vertical-align: middle;
+	}
+
+	/* preprints: same tag template as venues, in a cool blue-grey instead of the venue beige/gold */
+	.conference-outlined.preprint {
+		background: #EEF2F7;
+		color: #526580 !important;
+		border-left-color: #B8C7DA;
 	}
 
 	/* Academic Service 沿用 Honors 的排版 */
@@ -515,7 +525,7 @@
 									<p class="pub-tldr"><strong>TL;DR:</strong> With the injection content held fixed, where an indirect prompt injection is placed strongly changes agent susceptibility: agents implicitly trust some regions of their environment (e.g., README/TODO files) more than others, and learned attackers can exploit this.</p>
 									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-Agent_Trust_Region" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
-										<span class="conference-outlined">arXiv 2026</span>
+										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2610.38867" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -530,7 +540,7 @@
 									<p class="pub-tldr"><strong>TL;DR:</strong> A platform and benchmark that turns privacy cases into executable multi-step agent tasks with grounded disclosure constraints; across 12 agents and 936 tasks, single-run leakage rates range from 32.5% to 94.4%.</p>
 									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-AgentCIScope" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
-										<span class="conference-outlined">arXiv 2026</span>
+										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2610.19158" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -545,7 +555,7 @@
 									<p class="pub-tldr"><strong>TL;DR:</strong> The first controllable and interactive red-teaming platform for AI agents, spanning 14 real-world domains and 50+ simulated environments, with an autonomous red-teaming agent (DTap-Red) and a large-scale benchmark (DTap-Bench).</p>
 									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-Dtap" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
-										<span class="conference-outlined">arXiv 2026</span>
+										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2605.04808" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -647,7 +657,7 @@
 									<h4 style="font-size: 1.35em; font-weight: 500;">Jialin Song, Xiaodong Liu, Weiwei Yang, Mingqian Feng, <u>Chengquan Guo</u>, Qiyao Ma, Carolyn Buractaon, Anson Ho, Wuyang Chen, Christopher White</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> A coarse-to-fine diversity reward for RL-trained multi-turn jailbreak attackers that prevents collapse onto near-duplicate attacks, finding 1.6&ndash;2.0&times; more distinct successful strategies while keeping attack success high.</p>
 									<div>
-										<span class="conference-outlined">arXiv 2026</span>
+										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2610.40926" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -658,7 +668,7 @@
 									<h4 style="font-size: 1.35em; font-weight: 500;">Qiyao Ma, Xiaodong Liu, Weiwei Yang, Mingqian Feng, <u>Chengquan Guo</u>, Jialin Song, Carolyn Buractaon, Zhe Zhao, Junshan Zhang, Sandeep Atluri, Christopher White, Jianfeng Gao</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> Turns shallow safety alignment into a defense: the defender first commits to an explicit safety decision (Assess &rarr; Decide &rarr; Respond), trained with RL, achieving the strongest multi-turn safety while preserving utility.</p>
 									<div>
-										<span class="conference-outlined">arXiv 2026</span>
+										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2610.40627" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -669,7 +679,7 @@
 									<h4 style="font-size: 1.35em; font-weight: 500;">Mingqian Feng, Xiaodong Liu, Weiwei Yang, Chenliang Xu, Jialin Song, Qiyao Ma, <u>Chengquan Guo</u>, Carolyn Buractaon, Mark Russinovich, Christopher White, Jianfeng Gao</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> An autonomous multi-turn jailbreak attacker that reads the victim's replies and decides by itself when to stop, with no in-loop evaluator, reaching state-of-the-art attack success in nearly the fewest turns.</p>
 									<div>
-										<span class="conference-outlined">arXiv 2026</span>
+										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2610.35743" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -680,7 +690,7 @@
 									<h4 style="font-size: 1.35em; font-weight: 500;">Shicheng Fan, Haochang Hao, Dehai Min, Weihao Liu, Hanrong Zhang, Lingwei Wei, Henry Peng Zou, <u>Chengquan Guo</u>, Jie Yang, Honghui Bao, Zhiwei Liu, Lu Cheng, Philip S. Yu</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> CorVer derives sentence-level factuality rewards from corpus co-occurrence statistics instead of neural verifiers, cutting RL training time by 5.5&ndash;10.4&times; while improving factual QA accuracy.</p>
 									<div>
-										<span class="conference-outlined">arXiv 2026</span>
+										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2605.29648" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -709,7 +719,7 @@
 									<h4 style="font-size: 1.35em; font-weight: 500;">Yuzhou Nie, Hongwei Li, <u>Chengquan Guo</u>, Ruizhe Jiang, Zhun Wang, Bo Li, Dawn Song, Wenbo Guo</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> The first specialized reasoning LLM (7B parameters) for vulnerability detection; with an agent scaffold it outperforms CodeQL and AFL++ on real-world projects and discovers zero-day vulnerabilities.</p>
 									<div>
-										<span class="conference-outlined">arXiv 2025</span>
+										<span class="conference-outlined preprint">arXiv 2025</span>
 										<a class="btn" href="https://arxiv.org/pdf/2512.07533" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
