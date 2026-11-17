@@ -226,6 +226,12 @@
 		#selected_work ul li h4 br { display: none; }
 		.pub-tldr { font-size: 0.98em; }
 		.fig-toggle { left: 0; top: 0; }
+		/* paper links: icon only on narrow screens */
+		#selected_work a.btn .btn-label { display: none; }
+		#selected_work a.btn { width: 38px; height: 38px; padding: 0; justify-content: center; border-radius: 50%; margin-right: 4px; font-size: 16px; }
+		#selected_work a.btn .btn-icon, #selected_work a.btn i { margin-right: 0; }
+		#selected_work a.btn .btn-icon { width: 18px; height: 18px; }
+		#selected_work .conference-outlined { min-width: 0 !important; width: auto !important; padding: 6px 10px !important; margin-right: 6px !important; font-size: 0.82em !important; white-space: nowrap; }
 		.news-list { max-height: 190px; }
 		#honors ul li h4, #service ul li h4 { font-size: 1.1em !important; }
 		#honors ul li span, #service ul li span { font-size: 0.95em; }
@@ -503,8 +509,8 @@
 									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-Agent_Trust_Region" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
 										<span class="conference-outlined">arXiv 2026</span>
-										<a class="btn" href="https://arxiv.org/pdf/2610.38867" target="_blank">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										<a class="btn" href="https://arxiv.org/pdf/2610.38867" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
 									</div>
 									<div class="pub-fig" id="fig-Agent_Trust_Region" hidden>
@@ -518,8 +524,8 @@
 									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-AgentCIScope" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
 										<span class="conference-outlined">arXiv 2026</span>
-										<a class="btn" href="https://arxiv.org/pdf/2610.19158" target="_blank">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										<a class="btn" href="https://arxiv.org/pdf/2610.19158" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
 									</div>
 									<div class="pub-fig" id="fig-AgentCIScope" hidden>
@@ -533,14 +539,14 @@
 									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-Dtap" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
 										<span class="conference-outlined">arXiv 2026</span>
-										<a class="btn" href="https://arxiv.org/pdf/2605.04808" target="_blank">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										<a class="btn" href="https://arxiv.org/pdf/2605.04808" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
-										<a class="btn" href="https://github.com/AI-secure/DecodingTrust-Agent" target="_blank">
-											<i class="fab fa-github"></i> Code
+										<a class="btn" href="https://github.com/AI-secure/DecodingTrust-Agent" target="_blank" aria-label="Code" title="Code">
+											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
 										</a>
-										<a class="btn" href="https://decodingtrust-agent.com" target="_blank">
-											🌐 Website
+										<a class="btn" href="https://decodingtrust-agent.com" target="_blank" aria-label="Website" title="Website">
+											<span class="btn-emoji">🌐</span> <span class="btn-label">Website</span>
 										</a>
 									</div>
 									<div class="pub-fig" id="fig-Dtap" hidden>
@@ -554,11 +560,11 @@
 									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-BlueCodeAgent" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
 										<span class="conference-outlined">ICML 2026</span>
-										<a class="btn" href="https://arxiv.org/pdf/2510.18131" target="_blank">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										<a class="btn" href="https://arxiv.org/pdf/2510.18131" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
-										<a class="btn" href="https://github.com/1mocat/BlueCodeAgent" target="_blank">
-											<i class="fab fa-github"></i> Code
+										<a class="btn" href="https://github.com/1mocat/BlueCodeAgent" target="_blank" aria-label="Code" title="Code">
+											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
 										</a>
 									</div>
 									<div class="pub-fig" id="fig-BlueCodeAgent" hidden>
@@ -572,11 +578,11 @@
 									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-RedCodeAgent" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
 										<span class="conference-outlined">ICLR 2026</span>
-										<a class="btn" href="https://arxiv.org/pdf/2510.02609" target="_blank">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										<a class="btn" href="https://arxiv.org/pdf/2510.02609" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
-											<a class="btn" href="https://github.com/1mocat/RedCodeAgent" target="_blank">
-											<i class="fab fa-github"></i> Code
+											<a class="btn" href="https://github.com/1mocat/RedCodeAgent" target="_blank" aria-label="Code" title="Code">
+											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
 										</a>
 									</div>
 									<div class="pub-fig" id="fig-RedCodeAgent" hidden>
@@ -590,14 +596,14 @@
 									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-RedCode" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
 										<span class="conference-outlined">NeurIPS 2024</span>
-										<a class="btn" href="https://arxiv.org/pdf/2411.07781" target="_blank">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										<a class="btn" href="https://arxiv.org/pdf/2411.07781" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
-										<a class="btn" href="https://github.com/ai-secure/redcode" target="_blank">
-											<i class="fab fa-github"></i> Code
+										<a class="btn" href="https://github.com/ai-secure/redcode" target="_blank" aria-label="Code" title="Code">
+											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
 										</a>
-										<a class="btn" href="https://redcode-agent.github.io/" target="_blank">
-											🌐 Website
+										<a class="btn" href="https://redcode-agent.github.io/" target="_blank" aria-label="Website" title="Website">
+											<span class="btn-emoji">🌐</span> <span class="btn-label">Website</span>
 										</a>
 									</div>
 									<div class="pub-fig" id="fig-RedCode" hidden>
@@ -611,11 +617,11 @@
 									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-GuardSet-X" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
 										<span class="conference-outlined">NeurIPS 2025</span>
-										<a class="btn" href="https://arxiv.org/pdf/2506.19054" target="_blank">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										<a class="btn" href="https://arxiv.org/pdf/2506.19054" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
-										<a class="btn" href="https://github.com/AI-secure/PolyGuard" target="_blank">
-											<i class="fab fa-github"></i> Code
+										<a class="btn" href="https://github.com/AI-secure/PolyGuard" target="_blank" aria-label="Code" title="Code">
+											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
 										</a>
 									</div>
 									<div class="pub-fig" id="fig-GuardSet-X" hidden>
@@ -635,8 +641,8 @@
 									<p class="pub-tldr"><strong>TL;DR:</strong> A coarse-to-fine diversity reward for RL-trained multi-turn jailbreak attackers that prevents collapse onto near-duplicate attacks, finding 1.6&ndash;2.0&times; more distinct successful strategies while keeping attack success high.</p>
 									<div>
 										<span class="conference-outlined">arXiv 2026</span>
-										<a class="btn" href="https://arxiv.org/pdf/2610.40926" target="_blank">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										<a class="btn" href="https://arxiv.org/pdf/2610.40926" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
 									</div>
 								</li>
@@ -646,8 +652,8 @@
 									<p class="pub-tldr"><strong>TL;DR:</strong> Turns shallow safety alignment into a defense: the defender first commits to an explicit safety decision (Assess &rarr; Decide &rarr; Respond), trained with RL, achieving the strongest multi-turn safety while preserving utility.</p>
 									<div>
 										<span class="conference-outlined">arXiv 2026</span>
-										<a class="btn" href="https://arxiv.org/pdf/2610.40627" target="_blank">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										<a class="btn" href="https://arxiv.org/pdf/2610.40627" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
 									</div>
 								</li>
@@ -657,8 +663,8 @@
 									<p class="pub-tldr"><strong>TL;DR:</strong> An autonomous multi-turn jailbreak attacker that reads the victim's replies and decides by itself when to stop, with no in-loop evaluator, reaching state-of-the-art attack success in nearly the fewest turns.</p>
 									<div>
 										<span class="conference-outlined">arXiv 2026</span>
-										<a class="btn" href="https://arxiv.org/pdf/2610.35743" target="_blank">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										<a class="btn" href="https://arxiv.org/pdf/2610.35743" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
 									</div>
 								</li>
@@ -668,8 +674,8 @@
 									<p class="pub-tldr"><strong>TL;DR:</strong> CorVer derives sentence-level factuality rewards from corpus co-occurrence statistics instead of neural verifiers, cutting RL training time by 5.5&ndash;10.4&times; while improving factual QA accuracy.</p>
 									<div>
 										<span class="conference-outlined">arXiv 2026</span>
-										<a class="btn" href="https://arxiv.org/pdf/2605.29648" target="_blank">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										<a class="btn" href="https://arxiv.org/pdf/2605.29648" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
 									</div>
 								</li>
@@ -679,14 +685,14 @@
 									<p class="pub-tldr"><strong>TL;DR:</strong> The first unified platform for evaluating multimodal foundation models across safety, hallucination, fairness, privacy, adversarial robustness, and out-of-distribution generalization.</p>
 									<div>
 										<span class="conference-outlined">ICLR 2025</span>
-										<a class="btn" href="https://arxiv.org/pdf/2503.14827" target="_blank">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										<a class="btn" href="https://arxiv.org/pdf/2503.14827" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
-										<a class="btn" href="https://github.com/AI-secure/MMDT" target="_blank">
-											<i class="fab fa-github"></i> Code
+										<a class="btn" href="https://github.com/AI-secure/MMDT" target="_blank" aria-label="Code" title="Code">
+											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
 										</a>
-										<a class="btn" href="https://mmdecodingtrust.github.io/" target="_blank">
-											🌐 Website
+										<a class="btn" href="https://mmdecodingtrust.github.io/" target="_blank" aria-label="Website" title="Website">
+											<span class="btn-emoji">🌐</span> <span class="btn-label">Website</span>
 										</a>
 									</div>
 								</li>
@@ -697,11 +703,11 @@
 									<p class="pub-tldr"><strong>TL;DR:</strong> The first specialized reasoning LLM (7B parameters) for vulnerability detection; with an agent scaffold it outperforms CodeQL and AFL++ on real-world projects and discovers zero-day vulnerabilities.</p>
 									<div>
 										<span class="conference-outlined">arXiv 2025</span>
-										<a class="btn" href="https://arxiv.org/pdf/2512.07533" target="_blank">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> Paper
+										<a class="btn" href="https://arxiv.org/pdf/2512.07533" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
-										<a class="btn" href="https://github.com/ucsb-mlsec/VulnLLM-R" target="_blank">
-											<i class="fab fa-github"></i> Code
+										<a class="btn" href="https://github.com/ucsb-mlsec/VulnLLM-R" target="_blank" aria-label="Code" title="Code">
+											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
 										</a>
 									</div>
 								</li>
