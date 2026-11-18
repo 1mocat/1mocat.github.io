@@ -266,8 +266,8 @@
 	.aside-email i { margin-right: 4px; }
 	.aside-email:hover { color: #b08a55; text-decoration: none; }
 	.aside-social { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-	.aside-social a { flex: 0 0 auto; width: 46px; height: 46px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #203655; color: white; font-size: 21px; text-decoration: none; box-shadow: 0 2px 6px rgba(32,54,85,0.18); transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
-	.aside-social a:hover { background: #d9c1a1; color: #203655; transform: translateY(-2px); }
+	.aside-social a { flex: 0 0 auto; width: 46px; height: 46px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #dfe6ef; color: #203655; font-size: 21px; text-decoration: none; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
+	.aside-social a:hover { background: #203655; color: white; transform: translateY(-2px); }
 	@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 	/* news (compact, scrolls when long) */
@@ -393,6 +393,91 @@
 	#service ul li span {
 		color: #666;
 	}
+	/* ================= layout system =================
+	   one content column, a five-step type scale (ratio 1.25) and a Fibonacci spacing scale
+	   (8 / 13 / 21 / 34 / 55). The !important flags are there to beat older inline styles. */
+	:root {
+		/* fluid column: 61.8% of the window (golden ratio), never narrower than 820px or wider than 1100px */
+		--col: clamp(820px, 61.8vw, 1100px);
+		--fs-small: 13px; --fs-body: 16px; --fs-lead: 20px; --fs-title: 20px; --fs-h2: 25px; --fs-name: 32px;
+		--sp-1: 8px; --sp-2: 13px; --sp-3: 21px; --sp-4: 34px; --sp-5: 55px;
+		--ink: #203655; --text: #3d4654; --muted: #7a838f;
+	}
+	@media (max-width: 991.98px) {
+		:root { --fs-lead: 16px; --fs-title: 18px; --fs-h2: 22px; --fs-name: 26px; --sp-4: 26px; --sp-5: 34px; }
+	}
+	@media (max-width: 400px) { :root { --fs-name: 22px; } }
+
+	/* one column for the bio and every section below it */
+	#colorlib-main .ftco-section .container { max-width: var(--col) !important; }
+	.hero-wrap .hero-inner .text { flex: 0 1 var(--col); max-width: var(--col); }
+
+	/* type scale */
+	.hero-wrap .desc h2.subheading { font-size: var(--fs-lead) !important; margin-bottom: var(--sp-1); }
+	.hero-wrap .desc h1 { font-size: var(--fs-name) !important; line-height: 1.3; margin-bottom: var(--sp-3) !important; }
+	.hero-wrap .text .img.mb-4 { margin-bottom: var(--sp-3) !important; }
+	.hero-wrap .text p.bio-meta { font-size: var(--fs-lead) !important; line-height: 1.6; }
+	#colorlib-main .heading-section h2 { font-size: var(--fs-h2) !important; line-height: 1.3; margin-bottom: 0 !important; }
+	#selected_work ul li h4:first-child { font-size: var(--fs-title) !important; line-height: 1.3; margin-bottom: var(--sp-1); }
+	#selected_work ul li h4:nth-child(2) { font-size: var(--fs-body) !important; line-height: 1.6; margin-bottom: var(--sp-1); color: var(--text); }
+	.pub-tldr { font-size: var(--fs-body); line-height: 1.6; margin: 0 0 var(--sp-2); color: var(--text); }
+	#selected_work ul > p { font-size: var(--fs-small); color: var(--muted); margin-bottom: var(--sp-3); }
+	#selected_work .conference-outlined, #selected_work .btn { font-size: var(--fs-small) !important; }
+	#other_pubs > h3 { font-size: var(--fs-small) !important; font-weight: 700 !important; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-bottom: var(--sp-1); border-bottom: 1px solid #e3e7ed; margin-bottom: var(--sp-3) !important; }
+	.news-date { font-size: var(--fs-small); }
+	.news-text { font-size: var(--fs-body); line-height: 1.6; color: var(--text); }
+	#honors ul li h4, #service ul li h4 { font-size: var(--fs-body) !important; font-weight: 600 !important; line-height: 1.6; }
+	#honors ul li span, #service ul li span { font-size: var(--fs-body) !important; font-weight: 400 !important; color: var(--muted); }
+
+	/* spacing rhythm: 8 inside an entry, 34 between entries, 55 between sections */
+	#colorlib-main section.ftco-section { margin-top: 0 !important; padding: var(--sp-5) 0 0 !important; }
+	#colorlib-main section.ftco-section:last-of-type { padding-bottom: var(--sp-5) !important; }
+	#colorlib-main .heading-section { margin-bottom: 0 !important; }
+	#colorlib-main .ftco-section .container > .row:first-child { margin-bottom: var(--sp-3) !important; padding-bottom: 0 !important; }
+	/* the link buttons carry 8px of bottom margin of their own, which completes the gap to --sp-4 */
+	#selected_work ul li { margin-bottom: calc(var(--sp-4) - 8px); }
+	#selected_work ul li:last-child { margin-bottom: 0; }
+	.pub-fig { margin: var(--sp-1) 0 var(--sp-2); }
+	#other_pubs { margin: var(--sp-4) 0 0; }
+	.news-list { padding: 0; margin: 0; }
+	.news-list li { padding: 0; margin-bottom: var(--sp-1); }
+	.news-list li:last-child { margin-bottom: 0; }
+	#honors ul, #service ul { margin-bottom: 0; }
+	#honors ul li, #service ul li { margin-bottom: var(--sp-1); }
+	/* ---------- mobile: a one-row bar of section tabs, contact buttons under the name,
+	   one gutter, and touch targets of at least 44px ---------- */
+	.hero-social { display: none; }
+	@media (max-width: 991.98px) {
+		:root { --gutter: 20px; --bar-h: 48px; }
+		#mobile-bar { height: var(--bar-h); padding: 0 calc(var(--gutter) - 8px); }
+		/* four equal tabs, each as tall as the bar; the dark pill is drawn inside the active one */
+		#mobile-nav { display: flex; height: 100%; gap: 0; padding: 0; overflow: visible; }
+		#mobile-nav a { position: relative; flex: 1 1 0; min-width: 0; display: flex; align-items: center; justify-content: center; padding: 0; border-radius: 0; font-size: 14px; }
+		#mobile-nav a[href="#"] { display: none; }
+		#mobile-nav a.colorlib-active { background: transparent; }
+		#mobile-nav a.colorlib-active::before { content: ""; position: absolute; top: 8px; bottom: 8px; left: 4px; right: 4px; border-radius: 16px; background: #203655; z-index: -1; }
+		/* contact buttons under the name */
+		.hero-social { display: flex; justify-content: center; gap: 10px; margin: 0 0 var(--sp-3); }
+		.hero-social a { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #e9eef5; color: #203655 !important; font-size: 19px; text-decoration: none; }
+		.hero-social a:active { background: #203655; color: white !important; }
+		.hero-wrap .desc h1 { margin-bottom: var(--sp-2) !important; }
+		#colorlib-main { padding-top: var(--bar-h); }
+		#news, #research, #honors, #service { scroll-margin-top: calc(var(--bar-h) + 8px); }
+		.hero-wrap { min-height: calc(100vh - var(--bar-h)) !important; }
+		/* other tap targets */
+		#selected_work a.btn { width: 44px; height: 44px; margin-right: 6px; }
+		#other_pubs_toggle { min-height: 44px; padding-left: 18px; padding-right: 18px; }
+		.fig-toggle { width: 32px; height: 32px; }
+		.fig-toggle::after { content: ""; position: absolute; top: -6px; bottom: -6px; left: -6px; right: -6px; }
+		/* bar, hero and sections share the same left/right gutter */
+		.hero-wrap .hero-inner .text { padding-left: var(--gutter); padding-right: var(--gutter); }
+		.hero-wrap .text p.bio-meta { padding-left: 0; padding-right: 0; }
+		#colorlib-main .ftco-section { padding-left: 0 !important; padding-right: 0 !important; }
+		#colorlib-main .ftco-section .container { padding-left: var(--gutter); padding-right: var(--gutter); }
+		#colorlib-main .ftco-section .container > .row { margin-left: 0; margin-right: 0; }
+		#colorlib-main .ftco-section .container > .row > [class*="col-"] { padding-left: 0; padding-right: 0; }
+	}
+	@media (max-width: 374.98px) { :root { --gutter: 16px; } }
 </style>
 </head>
 
@@ -401,16 +486,6 @@
 	<div id="colorlib-page">
 		<!-- mobile top bar (shown below 992px, where the sidebar is hidden) -->
 		<header id="mobile-bar">
-			<div class="mobile-bar-top">
-				<a class="mobile-name" href="#">Chengquan Guo</a>
-				<div class="mobile-social">
-					<a href="mailto:chengquanguo@uchicago.edu" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
-					<a href="https://github.com/1mocat" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
-					<a href="https://scholar.google.com/citations?user=ubFLQuEAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-					<a href="https://www.linkedin.com/in/chengquan-guo-ba57782b9/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-					<a href="https://x.com/ChengquanGuo" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
-				</div>
-			</div>
 			<nav id="mobile-nav" aria-label="Sections">
 				<a href="#" class="colorlib-active">Home</a>
 				<a href="#news">News</a>
@@ -474,6 +549,14 @@
 						<div class="desc">
 							<h2 class="subheading" style="font-size: 1.5rem;">Hello I'm</h2>
 							<h1 class="mb-4" style="font-size: 2rem; color: #1a2a3a;">Chengquan Guo <span style="font-family: 'Ma Shan Zheng', sans-serif;">(郭城权)</span></h1>
+							<!-- contact links for phones and tablets (the sidebar carries them on desktop) -->
+							<div class="hero-social">
+								<a href="mailto:chengquanguo@uchicago.edu" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+								<a href="https://github.com/1mocat" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+								<a href="https://scholar.google.com/citations?user=ubFLQuEAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+								<a href="https://www.linkedin.com/in/chengquan-guo-ba57782b9/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+								<a href="https://x.com/ChengquanGuo" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+							</div>
 								<p class="bio-meta mb-4">
 									I am a second-year PhD student in the <a href="https://aisecure.github.io/" target="_blank">Secure Learning Lab</a> at <span style="white-space: nowrap;"><img src="images/uchicago-shield.png" class="inline-logo" alt="University of Chicago shield" width="76" height="96"> <a href="https://cs.uchicago.edu/" target="_blank">the</a></span><a href="https://cs.uchicago.edu/" target="_blank"> University of Chicago</a>, advised by <a href="https://aisecure.github.io/" target="_blank">Prof. Bo Li</a> and <a href="https://zhangce.github.io" target="_blank">Prof. Ce Zhang</a>.
 									<strong class="bio-focus">I study the safety and security of LLM agents, focusing on automated red teaming, prompt injection, and contextual privacy.</strong>
@@ -650,7 +733,7 @@
 									</div>
 								</li>
 							</ul>
-							<div class="text-center" style="margin: 10px 0 20px;">
+							<div class="text-center" style="margin: 26px 0 0;">
 								<button id="other_pubs_toggle" type="button" class="btn" aria-expanded="false" aria-controls="other_pubs"
 									onclick="var l=document.getElementById('other_pubs');var open=l.style.display==='none';l.style.display=open?'':'none';this.setAttribute('aria-expanded',open);this.innerHTML=open?'Hide Other Publications &#9650;':'Show Other Publications &#9660;';">Show Other Publications &#9660;</button>
 							</div>
