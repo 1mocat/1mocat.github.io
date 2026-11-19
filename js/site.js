@@ -43,7 +43,7 @@
 	var spy = [], order = [];
 	for (var q = 0; q < links.length; q++) {
 		var id = links[q].getAttribute('href').slice(1);
-		spy.push({ id: id, node: links[q].closest('li') || links[q] });
+		spy.push({ id: id, also: links[q].getAttribute('data-spy-also'), node: links[q].closest('li') || links[q] });
 		if (order.indexOf(id) < 0) order.push(id);
 	}
 	var spyTicking = false, pinned = null;
@@ -65,7 +65,7 @@
 			}
 		}
 		for (var t = 0; t < spy.length; t++) {
-			var on = spy[t].id === current;
+			var on = spy[t].id === current || (current !== '' && spy[t].also === current);
 			spy[t].node.classList.toggle('colorlib-active', on);
 			// keep the active chip visible in the horizontally scrolling mobile nav
 			if (on && spy[t].node.parentNode.id === 'mobile-nav') {

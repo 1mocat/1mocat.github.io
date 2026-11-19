@@ -458,7 +458,6 @@
 		/* four equal tabs, each as tall as the bar; the dark pill is drawn inside the active one */
 		#mobile-nav { display: flex; height: 100%; gap: 0; padding: 0; overflow: visible; }
 		#mobile-nav a { position: relative; flex: 1 1 0; min-width: 0; display: flex; align-items: center; justify-content: center; padding: 0; border-radius: 0; font-size: 14px; }
-		#mobile-nav a[href="#"] { display: none; }
 		#mobile-nav a.colorlib-active { background: transparent; }
 		#mobile-nav a.colorlib-active::before { content: ""; position: absolute; top: 8px; bottom: 8px; left: 4px; right: 4px; border-radius: 16px; background: #203655; z-index: -1; }
 		/* contact buttons under the name */
@@ -496,8 +495,8 @@
 				<a href="#" class="colorlib-active">Home</a>
 				<a href="#news">News</a>
 				<a href="#research">Research</a>
-				<a href="#honors">Honors</a>
-				<a href="#service">Service</a>
+				<!-- Academic Service is short and sits right under Honors, so this tab covers both -->
+				<a href="#honors" data-spy-also="service">Honors</a>
 			</nav>
 		</header>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
