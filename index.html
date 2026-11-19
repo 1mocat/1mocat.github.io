@@ -243,7 +243,7 @@
 		#selected_work a.btn { width: 38px; height: 38px; padding: 0; justify-content: center; border-radius: 50%; margin-right: 4px; font-size: 16px; }
 		#selected_work a.btn .btn-icon, #selected_work a.btn i { margin-right: 0; }
 		#selected_work a.btn .btn-icon { width: 18px; height: 18px; }
-		#selected_work .conference-outlined { min-width: 0 !important; width: auto !important; padding: 6px 10px !important; margin-right: 6px !important; font-size: 0.82em !important; white-space: nowrap; }
+		#selected_work .conference-outlined { min-width: 116px !important; width: auto !important; padding: 6px 10px !important; margin-right: 6px !important; font-size: 0.82em !important; white-space: nowrap; }
 		#honors ul li h4, #service ul li h4 { font-size: 1.1em !important; }
 		#honors ul li span, #service ul li span { font-size: 0.95em; }
 		.heading-section h2 { font-size: 1.7em !important; }
@@ -471,7 +471,7 @@
 		#news, #research, #honors, #service { scroll-margin-top: calc(var(--bar-h) + 8px); }
 		.hero-wrap { min-height: calc(100vh - var(--bar-h)) !important; }
 		/* other tap targets */
-		#selected_work a.btn { width: 44px; height: 44px; margin-right: 6px; }
+		#selected_work a.btn { width: 44px; height: 44px; margin-right: 4px; }
 		#other_pubs_toggle { min-height: 44px; padding-left: 18px; padding-right: 18px; }
 		.fig-toggle { width: 32px; height: 32px; }
 		.fig-toggle::after { content: ""; position: absolute; top: -6px; bottom: -6px; left: -6px; right: -6px; }
@@ -700,6 +700,24 @@
 									</div>
 								</li>
 								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em;">GUARDSET-X: Multi-Domain, Policy-Grounded, AI Security Guardrail Benchmark</h4>
+									<h4 style="font-size: 1.35em; font-weight: 500;">Mintong Kang*, Zhaorun Chen*, Chejian Xu*, Jiawei Zhang*, <u>Chengquan Guo*</u>, Minzhou Pan, Ivan Revilla, Yu Sun, Bo Li</h4>
+									<p class="pub-tldr"><strong>TL;DR:</strong> A guardrail benchmark covering eight safety-critical domains, with risks grounded in real domain-specific safety policies; benchmarking 19 guardrail models reveals limited domain coverage and vulnerability to adversarial attacks.</p>
+									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-GuardSet-X" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
+									<div>
+										<span class="conference-outlined">NeurIPS 2025</span>
+										<a class="btn" href="https://arxiv.org/pdf/2506.19054" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
+										</a>
+										<a class="btn" href="https://github.com/AI-secure/PolyGuard" target="_blank" aria-label="Code" title="Code">
+											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
+										</a>
+									</div>
+									<div class="pub-fig" id="fig-GuardSet-X" hidden>
+										<a href="images/works/GuardSet-X.png" target="_blank"><img src="images/works/GuardSet-X.webp" loading="lazy" decoding="async" alt="Figure from the paper"></a>
+									</div>
+								</li>
+								<li>
 									<h4 style="font-weight: bold; font-size: 1.5em;">RedCode: Risky Code Execution and Generation Benchmark for Code Agents</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;"><u>Chengquan Guo*</u>, Xun Liu*, Chulin Xie*, Andy Zhou, Yi Zeng, Zinan Lin, Dawn Song, Bo Li</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> A benchmark of 4,050 risky code-execution test cases (25 vulnerability types, evaluated in Docker) and 160 harmful code-generation prompts for assessing the safety of code agents.</p>
@@ -718,24 +736,6 @@
 									</div>
 									<div class="pub-fig" id="fig-RedCode" hidden>
 										<a href="images/works/RedCode.png" target="_blank"><img src="images/works/RedCode.webp" loading="lazy" decoding="async" alt="Figure from the paper"></a>
-									</div>
-								</li>
-								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">GUARDSET-X: Multi-Domain, Policy-Grounded, AI Security Guardrail Benchmark</h4>
-									<h4 style="font-size: 1.35em; font-weight: 500;">Mintong Kang*, Zhaorun Chen*, Chejian Xu*, Jiawei Zhang*, <u>Chengquan Guo*</u>, Minzhou Pan, Ivan Revilla, Yu Sun, Bo Li</h4>
-									<p class="pub-tldr"><strong>TL;DR:</strong> A guardrail benchmark covering eight safety-critical domains, with risks grounded in real domain-specific safety policies; benchmarking 19 guardrail models reveals limited domain coverage and vulnerability to adversarial attacks.</p>
-									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-GuardSet-X" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
-									<div>
-										<span class="conference-outlined">NeurIPS 2025</span>
-										<a class="btn" href="https://arxiv.org/pdf/2506.19054" target="_blank" aria-label="Paper" title="Paper">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
-										</a>
-										<a class="btn" href="https://github.com/AI-secure/PolyGuard" target="_blank" aria-label="Code" title="Code">
-											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
-										</a>
-									</div>
-									<div class="pub-fig" id="fig-GuardSet-X" hidden>
-										<a href="images/works/GuardSet-X.png" target="_blank"><img src="images/works/GuardSet-X.webp" loading="lazy" decoding="async" alt="Figure from the paper"></a>
 									</div>
 								</li>
 							</ul>
@@ -790,6 +790,21 @@
 									</div>
 								</li>
 								<li>
+									<h4 style="font-weight: bold; font-size: 1.5em;">VulnLLM-R: Specialized Reasoning LLM with Agent Scaffold for Vulnerability Detection</h4>
+									<h4 style="font-size: 1.35em; font-weight: 500;">Yuzhou Nie, Hongwei Li, <u>Chengquan Guo</u>, Ruizhe Jiang, Zhun Wang, Bo Li, Dawn Song, Wenbo Guo</h4>
+									<p class="pub-tldr"><strong>TL;DR:</strong> The first specialized reasoning LLM (7B parameters) for vulnerability detection; with an agent scaffold it outperforms CodeQL and AFL++ on real-world projects and discovers zero-day vulnerabilities.</p>
+									<div>
+										<span class="conference-outlined preprint">arXiv 2025</span>
+										<a class="btn" href="https://arxiv.org/pdf/2512.07533" target="_blank" aria-label="Paper" title="Paper">
+											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
+										</a>
+										<a class="btn" href="https://github.com/ucsb-mlsec/VulnLLM-R" target="_blank" aria-label="Code" title="Code">
+											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
+										</a>
+									</div>
+								</li>
+								
+								<li>
 									<h4 style="font-weight: bold; font-size: 1.5em;">MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;">Chejian Xu, Jiawei Zhang, Zhaorun Chen, Chulin Xie, Mintong Kang, Yujin Potter, Zhun Wang, Zhuowen Yuan, Alexander Xiong,<br>Zidi Xiong, Chenhui Zhang, Lingzhi Yuan, Yi Zeng, Peiyang Xu, <u>Chengquan Guo</u>, Andy Zhou, Jeffrey Ziwei Tan, Xuandong Zhao,<br> Francesco Pinto, Zhen Xiang, Yu Gai, Zinan Lin, Dan Hendrycks, Bo Li, Dawn Song</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> The first unified platform for evaluating multimodal foundation models across safety, hallucination, fairness, privacy, adversarial robustness, and out-of-distribution generalization.</p>
@@ -803,21 +818,6 @@
 										</a>
 										<a class="btn" href="https://mmdecodingtrust.github.io/" target="_blank" aria-label="Website" title="Website">
 											<span class="btn-emoji">🌐</span> <span class="btn-label">Website</span>
-										</a>
-									</div>
-								</li>
-								
-								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">VulnLLM-R: Specialized Reasoning LLM with Agent Scaffold for Vulnerability Detection</h4>
-									<h4 style="font-size: 1.35em; font-weight: 500;">Yuzhou Nie, Hongwei Li, <u>Chengquan Guo</u>, Ruizhe Jiang, Zhun Wang, Bo Li, Dawn Song, Wenbo Guo</h4>
-									<p class="pub-tldr"><strong>TL;DR:</strong> The first specialized reasoning LLM (7B parameters) for vulnerability detection; with an agent scaffold it outperforms CodeQL and AFL++ on real-world projects and discovers zero-day vulnerabilities.</p>
-									<div>
-										<span class="conference-outlined preprint">arXiv 2025</span>
-										<a class="btn" href="https://arxiv.org/pdf/2512.07533" target="_blank" aria-label="Paper" title="Paper">
-											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
-										</a>
-										<a class="btn" href="https://github.com/ucsb-mlsec/VulnLLM-R" target="_blank" aria-label="Code" title="Code">
-											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
 										</a>
 									</div>
 								</li>
