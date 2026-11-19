@@ -178,7 +178,7 @@
 	.hero-wrap { overflow: hidden; height: auto !important; min-height: 100vh !important; display: flex; flex-direction: column; justify-content: center; }
 	.hero-inner { padding: 30px 0 150px; }
 	.hero-wrap .text .img { margin-top: 0; }
-	.hero-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; background: url(images/bg_1.jpg) no-repeat center calc(100% + 100px) / cover; will-change: transform; }
+	.hero-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; background: url(images/bg_1.jpg) no-repeat center calc(100% + 100px) / cover; }
 
 	/* bio: research focus leads, affiliations are secondary */
 	.bio-meta { font-size: 1.2rem; line-height: 1.75; color: #7a838f; }
@@ -404,9 +404,8 @@
 		--ink: #203655; --text: #3d4654; --muted: #7a838f;
 	}
 	@media (max-width: 991.98px) {
-		:root { --fs-lead: 16px; --fs-title: 18px; --fs-h2: 22px; --fs-name: 26px; --sp-4: 26px; --sp-5: 34px; }
+		:root { --fs-lead: 16px; --fs-title: 18px; --fs-h2: 22px; --fs-name: clamp(19px, 6vw, 26px); --sp-4: 26px; --sp-5: 34px; }
 	}
-	@media (max-width: 400px) { :root { --fs-name: 22px; } }
 
 	/* one column for the bio and every section below it */
 	#colorlib-main .ftco-section .container { max-width: var(--col) !important; }
@@ -460,7 +459,8 @@
 		.hero-social { display: flex; justify-content: center; gap: 10px; margin: 0 0 var(--sp-3); }
 		.hero-social a { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #e9eef5; color: #203655 !important; font-size: 19px; text-decoration: none; }
 		.hero-social a:active { background: #203655; color: white !important; }
-		.hero-wrap .desc h1 { margin-bottom: var(--sp-2) !important; }
+		/* the name always stays on one line; its size follows the screen width instead */
+		.hero-wrap .desc h1 { margin-bottom: var(--sp-2) !important; white-space: nowrap; }
 		#colorlib-main { padding-top: var(--bar-h); }
 		#news, #research, #honors, #service { scroll-margin-top: calc(var(--bar-h) + 8px); }
 		.hero-wrap { min-height: calc(100vh - var(--bar-h)) !important; }

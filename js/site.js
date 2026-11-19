@@ -115,17 +115,4 @@
 		bar.addEventListener('click', function () { bar.classList.remove('bar-hidden'); });
 	}
 
-	// hero background parallax: move a composited layer instead of repainting the background
-	var bg = document.getElementById('parallax-bg-layer');
-	if (bg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-		var speed = 0.15, ticking = false;
-		function update() {
-			bg.style.transform = 'translate3d(0,' + (-window.pageYOffset * speed) + 'px,0)';
-			ticking = false;
-		}
-		window.addEventListener('scroll', function () {
-			if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
-		}, { passive: true });
-		update();
-	}
 })();
