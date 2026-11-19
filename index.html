@@ -237,7 +237,8 @@
 		#selected_work ul li h4:nth-child(2) { font-size: 0.92em !important; line-height: 1.5; }
 		#selected_work ul li h4 br { display: none; }
 		.pub-tldr { font-size: 0.98em; }
-		.fig-toggle { left: 0; top: 0; }
+		/* the button hangs 12px into the page gutter so the text column keeps its width */
+		.fig-toggle { left: -12px; }
 		/* paper links: icon only on narrow screens */
 		#selected_work a.btn .btn-label { display: none; }
 		#selected_work a.btn { width: 38px; height: 38px; padding: 0; justify-content: center; border-radius: 50%; margin-right: 4px; font-size: 16px; }
@@ -283,17 +284,17 @@
 	@media (max-width: 576px) { .news-list li { flex-direction: column; gap: 0; } .news-date { flex: none; } }
 
 	/* honors and service share the left edge of the paper titles */
-	#honors ul li, #service ul li { padding-left: 44px !important; }
+	#honors ul li, #service ul li { padding-left: 58px !important; }
 
 	/* paper TL;DR + figure toggle */
-	#selected_work ul li { position: relative; padding-left: 44px; }
+	#selected_work ul li { position: relative; padding-left: 58px; }
 	.pub-tldr { font-size: 1.1em; color: #444; margin: 2px 0 8px; line-height: 1.5; }
-	.fig-toggle { position: absolute; left: 4px; top: 3px; width: 30px; height: 30px; padding: 0; display: flex; align-items: center; justify-content: center; border: none; border-radius: 8px; background: #eef2f7; color: #203655; cursor: pointer; transition: background 0.2s ease, color 0.2s ease; }
-	.fig-toggle svg { transition: transform 0.25s ease; }
-	.fig-toggle:hover { background: #d9c1a1; }
+	.fig-toggle { position: absolute; left: 0; top: 0; width: 38px; height: 38px; padding: 0; display: flex; align-items: center; justify-content: center; border: 1px solid #d8dee6; border-radius: 10px; background: #f4f6f9; color: #203655; cursor: pointer; transition: background 0.2s ease, color 0.2s ease; }
+	.fig-toggle svg { width: 20px; height: 20px; transition: transform 0.25s ease; }
+	.fig-toggle:hover { background: #e6ebf2; }
 	.fig-toggle:focus { outline: none; }
 	.fig-toggle:focus-visible { outline: 2px solid #203655; outline-offset: 2px; }
-	.fig-toggle[aria-expanded="true"] { background: #203655; color: white; }
+	.fig-toggle[aria-expanded="true"] { background: #dfe6ef; border-color: #c5d0de; }
 	.fig-toggle[aria-expanded="true"] svg { transform: rotate(90deg); }
 	.pub-fig { margin: 6px 0 10px; }
 	.pub-fig img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; }
@@ -472,8 +473,8 @@
 		/* other tap targets */
 		#selected_work a.btn { width: 44px; height: 44px; margin-right: 4px; }
 		#other_pubs_toggle { min-height: 44px; padding-left: 18px; padding-right: 18px; }
-		.fig-toggle { width: 32px; height: 32px; }
-		.fig-toggle::after { content: ""; position: absolute; top: -6px; bottom: -6px; left: -6px; right: -6px; }
+		.fig-toggle { width: 40px; height: 40px; }
+		.fig-toggle::after { content: ""; position: absolute; top: -4px; bottom: -4px; left: -4px; right: -4px; }
 		/* bar, hero and sections share the same left/right gutter */
 		.hero-wrap .hero-inner .text { padding-left: var(--gutter); padding-right: var(--gutter); }
 		.hero-wrap .text p.bio-meta { padding-left: 0; padding-right: 0; }
