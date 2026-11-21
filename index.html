@@ -224,7 +224,7 @@
 		.mobile-name, #mobile-nav a { text-shadow: 0 0 6px rgba(255,255,255,0.95), 0 0 2px rgba(255,255,255,0.9); }
 		#mobile-nav a.colorlib-active { background: #203655; color: white; text-shadow: none; }
 		#colorlib-main { padding-top: 88px; }
-		#news, #research, #honors, #service { scroll-margin-top: 96px; }
+		#news, #research, #impact, #honors, #service { scroll-margin-top: 96px; }
 		.hero-wrap { min-height: calc(100vh - 88px) !important; }
 		.hero-inner { padding: 20px 0 110px; }
 		.hero-wrap .text .img { width: 150px !important; height: 150px !important; margin-left: auto; margin-right: auto; }
@@ -232,7 +232,7 @@
 		.hero-wrap h1 { font-size: 1.6rem !important; }
 		.ftco-section .container { padding-left: 16px; padding-right: 16px; }
 		#selected_work ul li { padding-left: 38px; }
-		#honors ul li, #service ul li { padding-left: 38px !important; }
+		#honors ul li, #impact ul li, #service ul li { padding-left: 38px !important; }
 		#selected_work ul li h4:first-child { font-size: 1.15em !important; line-height: 1.35; }
 		#selected_work ul li h4:nth-child(2) { font-size: 0.92em !important; line-height: 1.5; }
 		#selected_work ul li h4 br { display: none; }
@@ -245,8 +245,8 @@
 		#selected_work a.btn .btn-icon, #selected_work a.btn i { margin-right: 0; }
 		#selected_work a.btn .btn-icon { width: 18px; height: 18px; }
 		#selected_work .conference-outlined { min-width: 116px !important; width: auto !important; padding: 6px 10px !important; margin-right: 6px !important; font-size: 0.82em !important; white-space: nowrap; }
-		#honors ul li h4, #service ul li h4 { font-size: 1.1em !important; }
-		#honors ul li span, #service ul li span { font-size: 0.95em; }
+		#honors ul li h4, #impact ul li h4, #service ul li h4 { font-size: 1.1em !important; }
+		#honors ul li span, #impact ul li span, #service ul li span { font-size: 0.95em; }
 		.heading-section h2 { font-size: 1.7em !important; }
 	}
 	@media (max-width: 400px) {
@@ -259,7 +259,7 @@
 
 	/* in-page navigation */
 	html { scroll-behavior: smooth; }
-	#news, #research, #honors, #service { scroll-margin-top: 16px; }
+	#news, #research, #impact, #honors, #service { scroll-margin-top: 16px; }
 	#colorlib-aside #colorlib-main-menu ul li { margin-bottom: 10px !important; }
 	#colorlib-aside #colorlib-logo { margin-bottom: 0.5em; }
 	.aside-contact { margin-bottom: 30px; padding-bottom: 26px; border-bottom: 1px solid #d8dee6; }
@@ -284,7 +284,7 @@
 	@media (max-width: 576px) { .news-list li { flex-direction: column; gap: 0; } .news-date { flex: none; } }
 
 	/* honors and service share the left edge of the paper titles */
-	#honors ul li, #service ul li { padding-left: 58px !important; }
+	#honors ul li, #impact ul li, #service ul li { padding-left: 58px !important; }
 
 	/* paper TL;DR + figure toggle */
 	#selected_work ul li { position: relative; padding-left: 58px; }
@@ -432,8 +432,8 @@
 		.news-date { display: inline-block; padding: 0 8px; margin-right: 6px; line-height: 1.6; }
 	}
 	.news-text { font-size: var(--fs-body); line-height: 1.6; color: var(--text); }
-	#honors ul li h4, #service ul li h4 { font-size: var(--fs-body) !important; font-weight: 600 !important; line-height: 1.6; }
-	#honors ul li span, #service ul li span { font-size: var(--fs-body) !important; font-weight: 400 !important; color: var(--muted); }
+	#honors ul li h4, #impact ul li h4, #service ul li h4 { font-size: var(--fs-body) !important; font-weight: 600 !important; line-height: 1.6; }
+	#honors ul li span, #impact ul li span, #service ul li span { font-size: var(--fs-body) !important; font-weight: 400 !important; color: var(--muted); }
 
 	/* spacing rhythm: 8 inside an entry, 34 between entries, 55 between sections */
 	#colorlib-main section.ftco-section { margin-top: 0 !important; padding: var(--sp-5) 0 0 !important; }
@@ -448,8 +448,19 @@
 	.news-list { padding: 0; margin: 0; }
 	.news-list li { padding: 0; margin-bottom: var(--sp-1); }
 	.news-list li:last-child { margin-bottom: 0; }
-	#honors ul, #service ul { margin-bottom: 0; }
-	#honors ul li, #service ul li { margin-bottom: var(--sp-1); }
+	#honors ul, #impact ul, #service ul { margin-bottom: 0; }
+	/* Industry Impact: the organisation leads the line as plain bold text, the project names are bold,
+	   and the report links carry the gold underline of the accepted-venue tags */
+	#impact ul li span.impact-org { color: var(--ink); font-weight: 700 !important; }
+	/* organisation logos sit in the 58px left gutter like bullets, centred in one 46 x 22 box,
+	   so the three organisation names start on the same edge as the paper titles */
+	#impact ul li { position: relative; }
+	.impact-logo { position: absolute; left: 0; top: 2px; width: 46px; height: 22px; object-fit: contain; }
+	#impact ul li span.impact-text { color: var(--text); line-height: 1.6; }
+	#impact ul li strong { color: var(--ink); font-weight: 700; }
+	#impact ul li a { color: var(--ink); font-weight: 600; border-bottom: 2px solid #d9c1a1; text-decoration: none; }
+	#impact ul li a:hover { color: #b08a55; border-bottom-color: #b08a55; }
+	#honors ul li, #impact ul li, #service ul li { margin-bottom: var(--sp-1); }
 	/* ---------- mobile: a one-row bar of section tabs, contact buttons under the name,
 	   one gutter, and touch targets of at least 44px ---------- */
 	.hero-social { display: none; }
@@ -468,7 +479,7 @@
 		/* the name always stays on one line; its size follows the screen width instead */
 		.hero-wrap .desc h1 { margin-bottom: var(--sp-2) !important; white-space: nowrap; }
 		#colorlib-main { padding-top: var(--bar-h); }
-		#news, #research, #honors, #service { scroll-margin-top: calc(var(--bar-h) + 8px); }
+		#news, #research, #impact, #honors, #service { scroll-margin-top: calc(var(--bar-h) + 8px); }
 		.hero-wrap { min-height: calc(100vh - var(--bar-h)) !important; }
 		/* other tap targets */
 		#selected_work a.btn { width: 44px; height: 44px; margin-right: 4px; }
@@ -495,7 +506,7 @@
 			<nav id="mobile-nav" aria-label="Sections">
 				<a href="#" class="colorlib-active">Home</a>
 				<a href="#news">News</a>
-				<a href="#research">Research</a>
+				<a href="#research" data-spy-also="impact">Research</a>
 				<!-- Academic Service is short and sits right under Honors, so this tab covers both -->
 				<a href="#honors" data-spy-also="service">Honors</a>
 			</nav>
@@ -526,6 +537,11 @@
 					<li style="margin-bottom: 20px;">
 						<a href="#research" style="text-decoration: none;">
 							<i class="fas fa-book-open"></i> Research
+						</a>
+					</li>
+					<li style="margin-bottom: 20px;">
+						<a href="#impact" style="text-decoration: none;">
+							<i class="fas fa-building"></i> Industry Impact
 						</a>
 					</li>
 					<li style="margin-bottom: 20px;">
@@ -827,6 +843,34 @@
 					</div>
 						
 					<!-- </div> -->
+				</div>
+			</section>
+
+			<section class="ftco-section" style="padding-top: 10px;">
+				<div id="impact" class="container">
+					<div class="row justify-content-center mb-3 pb-1">
+						<div class="col-md-7 heading-section text-center ftco-animate">
+							<h2 class="mb-3" style="font-size: 2em;">Industry Impact</h2>
+						</div>
+					</div>
+					<div class="row ftco-animate">
+						<div class="col-md-12">
+							<ul class="list-unstyled">
+								<li>
+									<span class="impact-org"><img src="images/logos/meta.svg" class="impact-logo" alt="" width="288" height="191">Meta:</span>
+									<span class="impact-text"><strong>RedCode</strong>, <strong>GuardSet-X</strong>, and <strong>DTap</strong> adopted in the <a href="https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report" target="_blank" rel="noopener">Muse Spark 1.1</a> and <a href="https://research.meta.ai/static/muse-spark-1-3-evaluation-report" target="_blank" rel="noopener">1.3</a> evaluation reports.</span>
+								</li>
+								<li>
+									<span class="impact-org"><img src="images/logos/pokee.png" class="impact-logo" alt="" width="123" height="128">Pokee AI:</span>
+									<span class="impact-text"><strong>DTap</strong> adopted in the <a href="https://decodingtrust-agent.com/papers/pokee-ai-dtap-security-whitepaper.pdf" target="_blank" rel="noopener">Pokee-Isaac 28B security report</a>.</span>
+								</li>
+								<li>
+									<span class="impact-org"><img src="images/logos/nist.svg" class="impact-logo" alt="" width="136" height="39">NIST:</span>
+									<span class="impact-text"><strong>RedCodeAgent</strong> cited in the <a href="https://csrc.nist.gov/pubs/sp/2400-102/e2026/ipd" target="_blank" rel="noopener">adversarial machine learning taxonomy report</a>.</span>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</section>
 
