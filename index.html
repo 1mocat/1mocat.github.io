@@ -499,9 +499,9 @@
 		#colorlib-main .ftco-section .container > .row > [class*="col-"] { padding-left: 0; padding-right: 0; }
 	}
 	@media (max-width: 374.98px) { :root { --gutter: 16px; } }
-	/* phones: the venue tag takes its own line above the title, so the title keeps the full width */
+	/* phones: the venue tag stays on the title line, as narrow as its text */
 	@media (max-width: 576px) {
-		#selected_work ul li h4 .conference-outlined { display: block; width: fit-content; min-width: 0; font-size: 14px !important; height: 24px; line-height: 24px; margin: 0 0 6px; }
+		#selected_work ul li h4 .conference-outlined { min-width: 0; font-size: 14px !important; height: 24px; line-height: 24px; padding: 0 8px; margin-right: 8px; }
 	}
 </style>
 </head>
