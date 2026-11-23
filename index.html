@@ -231,20 +231,16 @@
 		.hero-wrap .text p.bio-meta { font-size: 1rem !important; line-height: 1.65; }
 		.hero-wrap h1 { font-size: 1.6rem !important; }
 		.ftco-section .container { padding-left: 16px; padding-right: 16px; }
-		#selected_work ul li { padding-left: 38px; }
 		#honors ul li, #impact ul li, #service ul li { padding-left: 38px !important; }
 		#selected_work ul li h4:first-child { font-size: 1.15em !important; line-height: 1.35; }
 		#selected_work ul li h4:nth-child(2) { font-size: 0.92em !important; line-height: 1.5; }
 		#selected_work ul li h4 br { display: none; }
 		.pub-tldr { font-size: 0.98em; }
-		/* the button hangs 12px into the page gutter so the text column keeps its width */
-		.fig-toggle { left: -12px; }
 		/* paper links: icon only on narrow screens */
 		#selected_work a.btn .btn-label { display: none; }
 		#selected_work a.btn { width: 38px; height: 38px; padding: 0; justify-content: center; border-radius: 50%; margin-right: 4px; font-size: 16px; }
 		#selected_work a.btn .btn-icon, #selected_work a.btn i { margin-right: 0; }
 		#selected_work a.btn .btn-icon { width: 18px; height: 18px; }
-		#selected_work .conference-outlined { min-width: 116px !important; width: auto !important; padding: 6px 10px !important; margin-right: 6px !important; font-size: 0.82em !important; white-space: nowrap; }
 		#honors ul li h4, #impact ul li h4, #service ul li h4 { font-size: 1.1em !important; }
 		#honors ul li span, #impact ul li span, #service ul li span { font-size: 0.95em; }
 		.heading-section h2 { font-size: 1.7em !important; }
@@ -287,9 +283,18 @@
 	#honors ul li, #impact ul li, #service ul li { padding-left: 58px !important; }
 
 	/* paper TL;DR + figure toggle */
-	#selected_work ul li { position: relative; padding-left: 58px; }
+	/* paper entry: the venue tag is the first inline box of the title, so a long title wraps back under it;
+	   authors, TL;DR and links start on the tag's left edge */
+	#selected_work ul li { padding-left: 0; }
+	/* a wrapped title never leaves one word alone on its last line: text-wrap: pretty where supported,
+	   and the last two words of every title are joined by &nbsp; in the markup for the other browsers */
+	#selected_work ul li h4:first-child { text-wrap: pretty; }
+	#selected_work ul li h4 .conference-outlined { font-size: 15px !important; min-width: 128px; height: 26px; line-height: 26px; padding: 0 10px; margin-right: 12px; vertical-align: top; letter-spacing: 0; }
+	#selected_work ul li > div:not(.pub-fig) { display: flex; flex-wrap: wrap; align-items: center; }
+	#selected_work ul li a.btn { margin: 0 8px 8px 0; }
 	.pub-tldr { font-size: 1.1em; color: #444; margin: 2px 0 8px; line-height: 1.5; }
-	.fig-toggle { position: absolute; left: 0; top: 0; width: 38px; height: 38px; padding: 0; display: flex; align-items: center; justify-content: center; border: 1px solid #d8dee6; border-radius: 10px; background: #f4f6f9; color: #203655; cursor: pointer; transition: background 0.2s ease, color 0.2s ease; }
+	/* the figure toggle is a square chevron button that leads the links row */
+	.fig-toggle { order: -1; flex: 0 0 auto; width: 36px; height: 36px; padding: 0; margin: 0 8px 8px 0; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #d8dee6; border-radius: 10px; background: #f4f6f9; color: #203655; cursor: pointer; transition: background 0.2s ease, color 0.2s ease; }
 	.fig-toggle svg { width: 20px; height: 20px; transition: transform 0.25s ease; }
 	.fig-toggle:hover { background: #e6ebf2; }
 	.fig-toggle:focus { outline: none; }
@@ -484,8 +489,7 @@
 		/* other tap targets */
 		#selected_work a.btn { width: 44px; height: 44px; margin-right: 4px; }
 		#other_pubs_toggle { min-height: 44px; padding-left: 18px; padding-right: 18px; }
-		.fig-toggle { width: 40px; height: 40px; }
-		.fig-toggle::after { content: ""; position: absolute; top: -4px; bottom: -4px; left: -4px; right: -4px; }
+		.fig-toggle { width: 44px; height: 44px; }
 		/* bar, hero and sections share the same left/right gutter */
 		.hero-wrap .hero-inner .text { padding-left: var(--gutter); padding-right: var(--gutter); }
 		.hero-wrap .text p.bio-meta { padding-left: 0; padding-right: 0; }
@@ -495,6 +499,10 @@
 		#colorlib-main .ftco-section .container > .row > [class*="col-"] { padding-left: 0; padding-right: 0; }
 	}
 	@media (max-width: 374.98px) { :root { --gutter: 16px; } }
+	/* phones: the venue tag takes its own line above the title, so the title keeps the full width */
+	@media (max-width: 576px) {
+		#selected_work ul li h4 .conference-outlined { display: block; width: fit-content; min-width: 0; font-size: 14px !important; height: 24px; line-height: 24px; margin: 0 0 6px; }
+	}
 </style>
 </head>
 
@@ -629,42 +637,38 @@
 							<ul class="list-unstyled">
 								<p>"*" stands for equal contribution.</p>
 								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">Where You Inject Matters: The Trust Region Effect in LLM Agents</h4>
+									<h4 style="font-weight: bold; font-size: 1.5em;"><span class="conference-outlined preprint">arXiv 2026</span>Where You Inject Matters: The Trust Region Effect in LLM&nbsp;Agents</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;"><u>Chengquan Guo</u>, Xiaodong Liu, Weiwei Yang, Mingqian Feng, Jialin Song, Qiyao Ma, Carolyn Buractaon, Christopher White, Bo Li, Jianfeng Gao</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> With the injection content held fixed, where an indirect prompt injection is placed strongly changes agent susceptibility: agents implicitly trust some regions of their environment (e.g., README/TODO files) more than others, and learned attackers can exploit this.</p>
-									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-Agent_Trust_Region" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
-										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2610.38867" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
+										<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-Agent_Trust_Region" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									</div>
 									<div class="pub-fig" id="fig-Agent_Trust_Region" hidden>
 										<a href="images/works/Agent_Trust_Region.png" target="_blank"><img src="images/works/Agent_Trust_Region.webp" loading="lazy" decoding="async" alt="Figure from the paper"></a>
 									</div>
 								</li>
 								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">AgentCIScope: Grounded Contextual Integrity Evaluation for LLM Agents</h4>
+									<h4 style="font-weight: bold; font-size: 1.5em;"><span class="conference-outlined preprint">arXiv 2026</span>AgentCIScope: Grounded Contextual Integrity Evaluation for LLM&nbsp;Agents</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;"><u>Chengquan Guo</u>, Zhaorun Chen, Zinan Lin, Xiaodong Liu, Bo Li</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> A platform and benchmark that turns privacy cases into executable multi-step agent tasks with grounded disclosure constraints; across 12 agents and 936 tasks, single-run leakage rates range from 32.5% to 94.4%.</p>
-									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-AgentCIScope" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
-										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2610.19158" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
+										<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-AgentCIScope" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									</div>
 									<div class="pub-fig" id="fig-AgentCIScope" hidden>
 										<a href="images/works/AgentCIScope.png" target="_blank"><img src="images/works/AgentCIScope.webp" loading="lazy" decoding="async" alt="Figure from the paper"></a>
 									</div>
 								</li>
 								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">DecodingTrust-Agent Platform (DTap): A Controllable and Interactive Red-Teaming Platform for AI Agents</h4>
+									<h4 style="font-weight: bold; font-size: 1.5em;"><span class="conference-outlined preprint">arXiv 2026</span>DecodingTrust-Agent Platform (DTap): A Controllable and Interactive Red-Teaming Platform for AI&nbsp;Agents</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;">Zhaorun Chen, Xun Liu, Haibo Tong, <u>Chengquan Guo</u>, Yuzhou Nie, Jiawei Zhang, Mintong Kang, Chejian Xu, Qichang Liu, Xiaogeng Liu, Tianneng Shi, Chaowei Xiao, Sanmi Koyejo, Percy Liang, Wenbo Guo, Dawn Song, Bo Li</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> The first controllable and interactive red-teaming platform for AI agents, spanning 14 real-world domains and 50+ simulated environments, with an autonomous red-teaming agent (DTap-Red) and a large-scale benchmark (DTap-Bench).</p>
-									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-Dtap" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
-										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2605.04808" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -674,72 +678,68 @@
 										<a class="btn" href="https://decodingtrust-agent.com" target="_blank" aria-label="Website" title="Website">
 											<span class="btn-emoji">🌐</span> <span class="btn-label">Website</span>
 										</a>
+										<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-Dtap" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									</div>
 									<div class="pub-fig" id="fig-Dtap" hidden>
 										<a href="images/works/Dtap.png" target="_blank"><img src="images/works/Dtap.webp" loading="lazy" decoding="async" alt="Figure from the paper"></a>
 									</div>
 								</li>
 								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">BlueCodeAgent: A Blue Teaming Agent Powered by Automated Red Teaming for CodeGen AI</h4>
+									<h4 style="font-weight: bold; font-size: 1.5em;"><span class="conference-outlined">ICML 2026</span>BlueCodeAgent: A Blue Teaming Agent Powered by Automated Red Teaming for CodeGen&nbsp;AI</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;"><u>Chengquan Guo</u>, Yuzhou Nie, Chulin Xie, Zinan Lin, Wenbo Guo, Bo Li</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> An end-to-end blue-teaming agent that uses automated red teaming to generate risky cases, then defends via constitution summarization and dynamic code analysis, improving F1 by 14.7% on average across four code-safety tasks.</p>
-									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-BlueCodeAgent" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
-										<span class="conference-outlined">ICML 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2510.18131" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
 										<a class="btn" href="https://github.com/1mocat/BlueCodeAgent" target="_blank" aria-label="Code" title="Code">
 											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
 										</a>
+										<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-BlueCodeAgent" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									</div>
 									<div class="pub-fig" id="fig-BlueCodeAgent" hidden>
 										<a href="images/works/BlueCodeAgent.png" target="_blank"><img src="images/works/BlueCodeAgent.webp" loading="lazy" decoding="async" alt="Figure from the paper"></a>
 									</div>
 								</li>
 								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents</h4>
+									<h4 style="font-weight: bold; font-size: 1.5em;"><span class="conference-outlined">ICLR 2026</span>RedCodeAgent: Automatic Red-teaming Agent against Diverse Code&nbsp;Agents</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;"><u>Chengquan Guo</u>, Chulin Xie, Yu Yang, Zhaorun Chen, Zinan Lin, Xander Davies, Yarin Gal, Dawn Song, Bo Li</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> The first automated red-teaming agent for code agents: an adaptive memory helps the agent select and combine jailbreak tools and attacks are judged by sandboxed execution, exposing new risks in real assistants such as Cursor and Codeium.</p>
-									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-RedCodeAgent" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
-										<span class="conference-outlined">ICLR 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2510.02609" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
 											<a class="btn" href="https://github.com/1mocat/RedCodeAgent" target="_blank" aria-label="Code" title="Code">
 											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
 										</a>
+										<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-RedCodeAgent" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									</div>
 									<div class="pub-fig" id="fig-RedCodeAgent" hidden>
 										<a href="images/works/RedCodeAgent.png" target="_blank"><img src="images/works/RedCodeAgent.webp" loading="lazy" decoding="async" alt="Figure from the paper"></a>
 									</div>
 								</li>
 								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">GUARDSET-X: Multi-Domain, Policy-Grounded, AI Security Guardrail Benchmark</h4>
+									<h4 style="font-weight: bold; font-size: 1.5em;"><span class="conference-outlined">NeurIPS 2025</span>GUARDSET-X: Multi-Domain, Policy-Grounded, AI Security Guardrail&nbsp;Benchmark</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;">Mintong Kang*, Zhaorun Chen*, Chejian Xu*, Jiawei Zhang*, <u>Chengquan Guo*</u>, Minzhou Pan, Ivan Revilla, Yu Sun, Bo Li</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> A guardrail benchmark covering eight safety-critical domains, with risks grounded in real domain-specific safety policies; benchmarking 19 guardrail models reveals limited domain coverage and vulnerability to adversarial attacks.</p>
-									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-GuardSet-X" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
-										<span class="conference-outlined">NeurIPS 2025</span>
 										<a class="btn" href="https://arxiv.org/pdf/2506.19054" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
 										<a class="btn" href="https://github.com/AI-secure/PolyGuard" target="_blank" aria-label="Code" title="Code">
 											<i class="fab fa-github"></i> <span class="btn-label">Code</span>
 										</a>
+										<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-GuardSet-X" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									</div>
 									<div class="pub-fig" id="fig-GuardSet-X" hidden>
 										<a href="images/works/GuardSet-X.png" target="_blank"><img src="images/works/GuardSet-X.webp" loading="lazy" decoding="async" alt="Figure from the paper"></a>
 									</div>
 								</li>
 								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">RedCode: Risky Code Execution and Generation Benchmark for Code Agents</h4>
+									<h4 style="font-weight: bold; font-size: 1.5em;"><span class="conference-outlined">NeurIPS 2024</span>RedCode: Risky Code Execution and Generation Benchmark for Code&nbsp;Agents</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;"><u>Chengquan Guo*</u>, Xun Liu*, Chulin Xie*, Andy Zhou, Yi Zeng, Zinan Lin, Dawn Song, Bo Li</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> A benchmark of 4,050 risky code-execution test cases (25 vulnerability types, evaluated in Docker) and 160 harmful code-generation prompts for assessing the safety of code agents.</p>
-									<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-RedCode" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									<div>
-										<span class="conference-outlined">NeurIPS 2024</span>
 										<a class="btn" href="https://arxiv.org/pdf/2411.07781" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -749,6 +749,7 @@
 										<a class="btn" href="https://redcode-agent.github.io/" target="_blank" aria-label="Website" title="Website">
 											<span class="btn-emoji">🌐</span> <span class="btn-label">Website</span>
 										</a>
+										<button type="button" class="fig-toggle" aria-expanded="false" aria-controls="fig-RedCode" aria-label="Show figure" title="Show figure" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 									</div>
 									<div class="pub-fig" id="fig-RedCode" hidden>
 										<a href="images/works/RedCode.png" target="_blank"><img src="images/works/RedCode.webp" loading="lazy" decoding="async" alt="Figure from the paper"></a>
@@ -762,55 +763,50 @@
 							<ul id="other_pubs" class="list-unstyled" style="display: none;">
 								<h3 style="font-weight: bold; font-size: 1.6em; margin-bottom: 16px;">Other Publications</h3>
 								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">CoFiBreak: A Coarse-to-Fine Diversity Reward for Effective Multi-Turn Jailbreak</h4>
+									<h4 style="font-weight: bold; font-size: 1.5em;"><span class="conference-outlined preprint">arXiv 2026</span>CoFiBreak: A Coarse-to-Fine Diversity Reward for Effective Multi-Turn&nbsp;Jailbreak</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;">Jialin Song, Xiaodong Liu, Weiwei Yang, Mingqian Feng, <u>Chengquan Guo</u>, Qiyao Ma, Carolyn Buractaon, Anson Ho, Wuyang Chen, Christopher White</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> A coarse-to-fine diversity reward for RL-trained multi-turn jailbreak attackers that prevents collapse onto near-duplicate attacks, finding 1.6&ndash;2.0&times; more distinct successful strategies while keeping attack success high.</p>
 									<div>
-										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2610.40926" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
 									</div>
 								</li>
 								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">ShallowDefend: Harnessing Shallow Safety Alignment for Multi-Turn Defender</h4>
+									<h4 style="font-weight: bold; font-size: 1.5em;"><span class="conference-outlined preprint">arXiv 2026</span>ShallowDefend: Harnessing Shallow Safety Alignment for Multi-Turn&nbsp;Defender</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;">Qiyao Ma, Xiaodong Liu, Weiwei Yang, Mingqian Feng, <u>Chengquan Guo</u>, Jialin Song, Carolyn Buractaon, Zhe Zhao, Junshan Zhang, Sandeep Atluri, Christopher White, Jianfeng Gao</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> Turns shallow safety alignment into a defense: the defender first commits to an explicit safety decision (Assess &rarr; Decide &rarr; Respond), trained with RL, achieving the strongest multi-turn safety while preserving utility.</p>
 									<div>
-										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2610.40627" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
 									</div>
 								</li>
 								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">SEMA-Auto: Sighted and Efficient Multi-Turn Attack with Autonomy</h4>
+									<h4 style="font-weight: bold; font-size: 1.5em;"><span class="conference-outlined preprint">arXiv 2026</span>SEMA-Auto: Sighted and Efficient Multi-Turn Attack with&nbsp;Autonomy</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;">Mingqian Feng, Xiaodong Liu, Weiwei Yang, Chenliang Xu, Jialin Song, Qiyao Ma, <u>Chengquan Guo</u>, Carolyn Buractaon, Mark Russinovich, Christopher White, Jianfeng Gao</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> An autonomous multi-turn jailbreak attacker that reads the victim's replies and decides by itself when to stop, with no in-loop evaluator, reaching state-of-the-art attack success in nearly the fewest turns.</p>
 									<div>
-										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2610.35743" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
 									</div>
 								</li>
 								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">Beyond Math and Code: Lightweight Corpus-Grounded Process Rewards for Factual Question Answering</h4>
+									<h4 style="font-weight: bold; font-size: 1.5em;"><span class="conference-outlined preprint">arXiv 2026</span>Beyond Math and Code: Lightweight Corpus-Grounded Process Rewards for Factual Question&nbsp;Answering</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;">Shicheng Fan, Haochang Hao, Dehai Min, Weihao Liu, Hanrong Zhang, Lingwei Wei, Henry Peng Zou, <u>Chengquan Guo</u>, Jie Yang, Honghui Bao, Zhiwei Liu, Lu Cheng, Philip S. Yu</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> CorVer derives sentence-level factuality rewards from corpus co-occurrence statistics instead of neural verifiers, cutting RL training time by 5.5&ndash;10.4&times; while improving factual QA accuracy.</p>
 									<div>
-										<span class="conference-outlined preprint">arXiv 2026</span>
 										<a class="btn" href="https://arxiv.org/pdf/2605.29648" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
 									</div>
 								</li>
 								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">VulnLLM-R: Specialized Reasoning LLM with Agent Scaffold for Vulnerability Detection</h4>
+									<h4 style="font-weight: bold; font-size: 1.5em;"><span class="conference-outlined preprint">arXiv 2025</span>VulnLLM-R: Specialized Reasoning LLM with Agent Scaffold for Vulnerability&nbsp;Detection</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;">Yuzhou Nie, Hongwei Li, <u>Chengquan Guo</u>, Ruizhe Jiang, Zhun Wang, Bo Li, Dawn Song, Wenbo Guo</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> The first specialized reasoning LLM (7B parameters) for vulnerability detection; with an agent scaffold it outperforms CodeQL and AFL++ on real-world projects and discovers zero-day vulnerabilities.</p>
 									<div>
-										<span class="conference-outlined preprint">arXiv 2025</span>
 										<a class="btn" href="https://arxiv.org/pdf/2512.07533" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -821,11 +817,10 @@
 								</li>
 								
 								<li>
-									<h4 style="font-weight: bold; font-size: 1.5em;">MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models</h4>
+									<h4 style="font-weight: bold; font-size: 1.5em;"><span class="conference-outlined">ICLR 2025</span>MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation&nbsp;Models</h4>
 									<h4 style="font-size: 1.35em; font-weight: 500;">Chejian Xu, Jiawei Zhang, Zhaorun Chen, Chulin Xie, Mintong Kang, Yujin Potter, Zhun Wang, Zhuowen Yuan, Alexander Xiong,<br>Zidi Xiong, Chenhui Zhang, Lingzhi Yuan, Yi Zeng, Peiyang Xu, <u>Chengquan Guo</u>, Andy Zhou, Jeffrey Ziwei Tan, Xuandong Zhao,<br> Francesco Pinto, Zhen Xiang, Yu Gai, Zinan Lin, Dan Hendrycks, Bo Li, Dawn Song</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> The first unified platform for evaluating multimodal foundation models across safety, hallucination, fairness, privacy, adversarial robustness, and out-of-distribution generalization.</p>
 									<div>
-										<span class="conference-outlined">ICLR 2025</span>
 										<a class="btn" href="https://arxiv.org/pdf/2503.14827" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
