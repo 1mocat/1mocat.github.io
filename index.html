@@ -501,6 +501,13 @@
 		#colorlib-main .ftco-section .container > .row > [class*="col-"] { padding-left: 0; padding-right: 0; }
 	}
 	@media (max-width: 374.98px) { :root { --gutter: 16px; } }
+	/* desktop: render the whole page 10% larger, the same as a browser zoom of 110%.
+	   Viewport units are not scaled by zoom, so the ones in use are divided by 1.1 to compensate. */
+	@media (min-width: 1200px) {
+		html { zoom: 1.1; }
+		:root { --col: clamp(820px, calc(61.8vw / 1.1), 1100px); }
+		.hero-wrap { min-height: calc(100vh / 1.1) !important; }
+	}
 	/* phones: the venue tag stays on the title line, as narrow as its text */
 	@media (max-width: 576px) {
 		#selected_work ul li h4 .conference-outlined { min-width: 0; font-size: 14px !important; height: 24px; line-height: 24px; padding: 0 8px; margin-right: 8px; }
