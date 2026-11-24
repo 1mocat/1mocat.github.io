@@ -466,6 +466,8 @@
 	#impact ul li a { color: var(--ink); font-weight: 600; border-bottom: 2px solid #d9c1a1; text-decoration: none; }
 	#impact ul li a:hover { color: #b08a55; border-bottom-color: #b08a55; }
 	#honors ul li, #impact ul li, #service ul li { margin-bottom: var(--sp-1); }
+	/* the block is as wide as its longest line and sits in the middle of the column */
+	.aligned-block { width: fit-content; max-width: 100%; margin: 0 auto; }
 	/* ---------- mobile: a one-row bar of section tabs, contact buttons under the name,
 	   one gutter, and touch targets of at least 44px ---------- */
 	.hero-social { display: none; }
@@ -841,6 +843,8 @@
 				</div>
 			</section>
 
+			<!-- Impact, Honors and Service share one centred block, so their lines start on one left edge -->
+			<section class="aligned-block">
 			<section class="ftco-section" style="padding-top: 10px;">
 				<div id="impact" class="container">
 					<div class="row justify-content-center mb-3 pb-1">
@@ -942,6 +946,7 @@
 						</div>
 					</div>
 				</div>
+			</section>
 			</section>
 <!--
 			<section class="ftco-section" style="padding-top: 10px;">
