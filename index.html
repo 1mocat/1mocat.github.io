@@ -508,6 +508,18 @@
 		:root { --col: clamp(820px, calc(61.8vw / 1.1), 1100px); }
 		.hero-wrap { min-height: calc(100vh / 1.1) !important; }
 	}
+	/* my own name in the author lists: bold and underlined */
+	#selected_work ul li h4 u { font-weight: 700; }
+	/* papers without a figure get a toggle only on mobile, where it reveals the TL;DR */
+	.fig-toggle.tldr-only { display: none; }
+	/* mobile: the TL;DR is folded away under the links row and opens, with the figure, from the chevron button */
+	@media (max-width: 991.98px) {
+		#selected_work ul li { display: flex; flex-direction: column; }
+		#selected_work ul li .pub-tldr { order: 1; display: none; margin-top: 2px; }
+		#selected_work ul li .pub-fig { order: 2; }
+		#selected_work ul li.pub-open .pub-tldr { display: block; }
+		.fig-toggle.tldr-only { display: inline-flex; }
+	}
 	/* phones: the venue tag stays on the title line, as narrow as its text */
 	@media (max-width: 576px) {
 		#selected_work ul li h4 .conference-outlined { min-width: 0; font-size: 14px !important; height: 24px; line-height: 24px; padding: 0 8px; margin-right: 8px; }
@@ -776,6 +788,7 @@
 									<h4 style="font-size: 1.35em; font-weight: 500;">Jialin Song, Xiaodong Liu, Weiwei Yang, Mingqian Feng, <u>Chengquan Guo</u>, Qiyao Ma, Carolyn Buractaon, Anson Ho, Wuyang Chen, Christopher White</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> A coarse-to-fine diversity reward for RL-trained multi-turn jailbreak attackers that prevents collapse onto near-duplicate attacks, finding 1.6&ndash;2.0&times; more distinct successful strategies while keeping attack success high.</p>
 									<div>
+										<button type="button" class="fig-toggle tldr-only" aria-expanded="false" aria-label="Show TL;DR" title="Show TL;DR" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 										<a class="btn" href="https://arxiv.org/pdf/2610.40926" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -786,6 +799,7 @@
 									<h4 style="font-size: 1.35em; font-weight: 500;">Qiyao Ma, Xiaodong Liu, Weiwei Yang, Mingqian Feng, <u>Chengquan Guo</u>, Jialin Song, Carolyn Buractaon, Zhe Zhao, Junshan Zhang, Sandeep Atluri, Christopher White, Jianfeng Gao</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> Turns shallow safety alignment into a defense: the defender first commits to an explicit safety decision (Assess &rarr; Decide &rarr; Respond), trained with RL, achieving the strongest multi-turn safety while preserving utility.</p>
 									<div>
+										<button type="button" class="fig-toggle tldr-only" aria-expanded="false" aria-label="Show TL;DR" title="Show TL;DR" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 										<a class="btn" href="https://arxiv.org/pdf/2610.40627" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -796,6 +810,7 @@
 									<h4 style="font-size: 1.35em; font-weight: 500;">Mingqian Feng, Xiaodong Liu, Weiwei Yang, Chenliang Xu, Jialin Song, Qiyao Ma, <u>Chengquan Guo</u>, Carolyn Buractaon, Mark Russinovich, Christopher White, Jianfeng Gao</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> An autonomous multi-turn jailbreak attacker that reads the victim's replies and decides by itself when to stop, with no in-loop evaluator, reaching state-of-the-art attack success in nearly the fewest turns.</p>
 									<div>
+										<button type="button" class="fig-toggle tldr-only" aria-expanded="false" aria-label="Show TL;DR" title="Show TL;DR" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 										<a class="btn" href="https://arxiv.org/pdf/2610.35743" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -806,6 +821,7 @@
 									<h4 style="font-size: 1.35em; font-weight: 500;">Shicheng Fan, Haochang Hao, Dehai Min, Weihao Liu, Hanrong Zhang, Lingwei Wei, Henry Peng Zou, <u>Chengquan Guo</u>, Jie Yang, Honghui Bao, Zhiwei Liu, Lu Cheng, Philip S. Yu</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> CorVer derives sentence-level factuality rewards from corpus co-occurrence statistics instead of neural verifiers, cutting RL training time by 5.5&ndash;10.4&times; while improving factual QA accuracy.</p>
 									<div>
+										<button type="button" class="fig-toggle tldr-only" aria-expanded="false" aria-label="Show TL;DR" title="Show TL;DR" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 										<a class="btn" href="https://arxiv.org/pdf/2605.29648" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -816,6 +832,7 @@
 									<h4 style="font-size: 1.35em; font-weight: 500;">Yuzhou Nie, Hongwei Li, <u>Chengquan Guo</u>, Ruizhe Jiang, Zhun Wang, Bo Li, Dawn Song, Wenbo Guo</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> The first specialized reasoning LLM (7B parameters) for vulnerability detection; with an agent scaffold it outperforms CodeQL and AFL++ on real-world projects and discovers zero-day vulnerabilities.</p>
 									<div>
+										<button type="button" class="fig-toggle tldr-only" aria-expanded="false" aria-label="Show TL;DR" title="Show TL;DR" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 										<a class="btn" href="https://arxiv.org/pdf/2512.07533" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -830,6 +847,7 @@
 									<h4 style="font-size: 1.35em; font-weight: 500;">Chejian Xu, Jiawei Zhang, Zhaorun Chen, Chulin Xie, Mintong Kang, Yujin Potter, Zhun Wang, Zhuowen Yuan, Alexander Xiong,<br>Zidi Xiong, Chenhui Zhang, Lingzhi Yuan, Yi Zeng, Peiyang Xu, <u>Chengquan Guo</u>, Andy Zhou, Jeffrey Ziwei Tan, Xuandong Zhao,<br> Francesco Pinto, Zhen Xiang, Yu Gai, Zinan Lin, Dan Hendrycks, Bo Li, Dawn Song</h4>
 									<p class="pub-tldr"><strong>TL;DR:</strong> The first unified platform for evaluating multimodal foundation models across safety, hallucination, fairness, privacy, adversarial robustness, and out-of-distribution generalization.</p>
 									<div>
+										<button type="button" class="fig-toggle tldr-only" aria-expanded="false" aria-label="Show TL;DR" title="Show TL;DR" onclick="toggleFig(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
 										<a class="btn" href="https://arxiv.org/pdf/2503.14827" target="_blank" aria-label="Paper" title="Paper">
 											<img src="images/arxiv-logomark.svg" class="btn-icon" alt="arXiv"> <span class="btn-label">Paper</span>
 										</a>
@@ -1004,11 +1022,15 @@
 
 <script>
 function toggleFig(b){
-	var f=document.getElementById(b.getAttribute("aria-controls"));
-	var open=f.hidden;
-	f.hidden=!open;
+	// the open state lives on the paper's <li>: it shows the figure everywhere and, on mobile, the TL;DR too
+	var li=b.closest("li");
+	var f=li.querySelector(".pub-fig");
+	var open=!li.classList.contains("pub-open");
+	li.classList.toggle("pub-open",open);
+	if(f)f.hidden=!open;
 	b.setAttribute("aria-expanded",open);
-	var t=open?"Hide figure":"Show figure";
+	var what=f?"figure":"TL;DR";
+	var t=(open?"Hide ":"Show ")+what;
 	b.title=t;b.setAttribute("aria-label",t);
 }
 </script>
